@@ -1,6 +1,6 @@
 /*-------------------------------------*\
 
-	WEBSITE NAME
+	IOB-WEBSITE WORDPRESS THEME
 
 	See style.css for the WP info.
 
@@ -22,3 +22,130 @@
 /*-------------------------------------*\
 	Dependencies
 \*-------------------------------------*/
+
+@font-face {
+	font-family: FuturaStd;
+	src: url(../fonts/FuturaStd-Heavy.otf);
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: FuturaBT;
+	src: url(../fonts/FuturaBT-Light.otf);
+	font-weight: 300;
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Variables
+\*-------------------------------------*/
+
+// Fonts
+$font--heavy: 'FuturaStd', sans-serif;
+$font--light: 'FuturaBT', sans-serif;
+
+// Colors
+$social:
+	(insta, #e1306c),
+	(facebook, #3b5998),
+	(flickr, #ff0084),
+	(vimeo, #1ab7ea),
+	(messenger, #0084ff);
+
+//transitions
+$transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
+
+// Grid
+$pad: 20px;
+
+//breakpoints
+$brk--real-phone: 568px;
+$brk--phone: 768px;
+$brk--tablet: 992px;
+$brk--desktop: 1200px;
+$brk--large-desktop: 1920px;
+
+
+
+
+
+/*-------------------------------------*\
+	Reset
+\*-------------------------------------*/
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	margin: 0;
+	background: white;
+	font-family: $font--light;
+	font-size: 16px;
+	overflow-x: hidden;
+
+	@media (min-width: $brk--tablet) {
+		font-size: 18px;
+	}
+
+	@media (min-width: $brk--desktop) {
+		font-size: 20px;
+	}
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Paragraph styles
+\*-------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $font--heavy;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 2.5em;
+	color: black;
+
+	@media (min-width: $brk--phone) {
+		font-size: 3em;
+	}
+}
+
+h2 {
+	font-size: 2.4em;
+	color: black;
+	margin: 1.5em (2 * $pad) .5em;
+}
+
+h3 {
+	font-size: 1.4em;
+	margin: .8em 0 .3em;
+	color: black;
+}
+
+p {
+	line-height: 1.4;
+}
+
+blockquote {
+	margin: 1em 0;
+	padding-left: 1.5em;
+	border-left: .7em solid #eee;
+}
