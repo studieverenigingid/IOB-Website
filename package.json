@@ -1,5 +1,5 @@
 {
-	"name": "",
+	"name": "IOB-Website",
 	"version": "0.0.1",
 	"description": "",
 	"main": "index.js",
@@ -8,14 +8,14 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/user/repo.git"
+		"url": "git+https://github.com/studieverenigingid/IOB-Website.git"
 	},
 	"author": "",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/user/repo/issues"
+		"url": "https://github.com/studieverenigingid/IOB-Website/issues"
 	},
-	"homepage": "https://github.com/user/repo#readme",
+	"homepage": "https://github.com/studieverenigingid/IOB-Website#readme",
 	"devDependencies": {
 		"gulp": "^3.9.1",
 		"gulp-autoprefixer": "^3.1.1",
