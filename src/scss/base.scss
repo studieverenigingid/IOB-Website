@@ -48,6 +48,11 @@ $font--heavy: 'FuturaStd', sans-serif;
 $font--light: 'FuturaBT', sans-serif;
 
 // Colors
+$accent: #31307D;
+$accent--secondary: #D8386C;
+$background--light: #fafafa;
+$background--gray: #222;
+
 $social:
 	(insta, #e1306c),
 	(facebook, #3b5998),
@@ -148,4 +153,393 @@ blockquote {
 	margin: 1em 0;
 	padding-left: 1.5em;
 	border-left: .7em solid #eee;
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Buttons
+\*-------------------------------------*/
+@mixin button-background($color) {
+	background: $color;
+
+	&:hover {
+		background: darken($color, 10%);
+	}
+
+	&:focus {
+		background: darken($color, 15%);
+	}
+}
+
+.button {
+	display: inline-block;
+	padding: .7em 1.4em;
+	margin: 5px 0;
+	border-radius: 50px;
+	color: white;
+	text-decoration: none;
+	border: none;
+	font-size: 1em;
+	font-family: $font--light;
+	@include button-background($accent);
+
+	&:hover, &:focus {
+		outline: none;
+	}
+
+	&--light {
+		background: none;
+		border: 1px solid $accent;
+		color: $accent;
+
+		&:hover,
+		&:focus {
+			color: $background--light;
+		}
+	}
+
+	&--white {
+		background: none;
+		border: 1px solid white;
+		color: white;
+
+		&:hover,
+		&:focus {
+			color: $accent;
+			background: white;
+		}
+	}
+
+	@each $socialnetwork, $color in $social {
+		&--#{$socialnetwork} {
+			@include button-background($color);
+		}
+	}
+}
+
+
+
+
+
+
+/*-------------------------------------*\
+	Bies
+\*-------------------------------------*/
+// Holy bies
+.bies {
+	width: 100%;
+	background: $accent;
+	padding: 0 0 1px;
+	position: relative;
+
+	&__image {
+		min-height: 60px;
+		height: 60px;
+		position: relative;
+		z-index: 11;
+		display: block;
+
+		@media (min-width: $brk--phone) {
+			background: transparentize($background--gray, 0.4);
+
+			&--sticky {
+				margin-bottom: 45px;
+			}
+		}
+
+		@media (min-width: 1218px) {
+			width: 100%;
+			height: auto;
+		}
+	}
+}
+// Amen
+
+
+
+
+
+
+/*-------------------------------------*\
+	Menu
+\*-------------------------------------*/
+
+#wpadminbar {
+	position: absolute;
+}
+
+.menu-toggle {
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	height: 3.1rem;
+	width: 100%;
+	padding-left: 1rem;
+	line-height: 3.1rem;
+	text-align: left;
+	color: white;
+	font-size: .9rem;
+	z-index: 11;
+	cursor: pointer;
+	transition: width 200ms ease-out;
+	overflow: hidden;
+	background: transparentize($background--gray, 0.4);
+
+	@media (min-width: $brk--phone) {
+		display: none;
+	}
+
+	&:before,
+	&:after {
+		display: block;
+		content: "";
+		width: 1.2rem;
+		height: 4px;
+		box-shadow: 0 9px 0 0 white;
+		background: white;
+		position: absolute;
+		right: -.9rem;
+		top: 14px;
+		transition: right 200ms ease-out,
+			color 200ms ease-out;
+	}
+
+	&:after {
+		top: 23px;
+		right: -.2rem;
+		width: .8rem;
+	}
+
+	&.opened {
+		&:before {
+			right: .9rem;
+		}
+
+		&:after {
+			right: .5rem;
+		}
+	}
+}
+
+.menu-item { // This deviates from our naming style guide because of Wordpress
+	a {
+		text-decoration: none;
+		color: white;
+		padding: .8rem 1.4rem;
+		display: block;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.primary-menu {
+	width: 100%;
+	font-family: $font--light;
+	position: fixed;
+	right: 0;
+	top: 0;
+	background: $background--gray;
+	color: white;
+	transform: translateX(100%);
+	transition: transform 200ms $transition--cubic;
+	z-index: 10;
+	padding-top: 3rem;
+	max-height: 100vh;
+	padding-bottom: 3.1rem;
+	overflow-y: auto;
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+
+	.current-menu-item {
+		font-family: $font--heavy;
+	}
+
+	.menu-item {
+		&--language-switch {
+			a {
+				text-transform: uppercase;
+				padding: 1rem 0;
+				display: inline-block;
+			}
+		}
+	}
+
+	&__list,
+	&__language-switch {
+		margin: 0;
+		padding: 1rem 0;
+		list-style: none;
+	}
+
+	@media (max-width: $brk--phone + 1) {
+		&__list {
+			flex-basis: 100%;
+			height: 100%;
+		}
+
+		&__language-switch {
+			display: flex;
+
+			&__context {
+				padding: .8rem 0 .8rem 1.4rem;
+			}
+		}
+
+		&.opened {
+			transform: translateX(0px);
+		}
+	}
+
+	@media (min-width: $brk--phone) {
+		padding: 0;
+		position: static;
+		transform: translateX(0px);
+		background: transparentize($background--gray, 0.4);
+
+		&__list, &__language-switch {
+			padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+		}
+
+		&__language-switch {
+			&__context {
+				display: none;
+			}
+
+			&:hover &__context {
+				display: inline-block;
+			}
+		}
+
+		.menu-item {
+			display: inline-block;
+			font-size: .9em;
+
+			a {
+				padding: .4rem .8rem;
+			}
+
+			&--language-switch {
+				a {
+					padding: .4rem 0;
+					display: inline-block;
+				}
+			}
+		}
+
+		&--sticky {
+			position: fixed;
+		}
+	}
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Hero
+\*-------------------------------------*/
+
+.thumbnail {
+	&--front-page {
+		filter: grayscale(100%);
+		width: 100%;
+		height: auto;
+	}
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Footer
+\*-------------------------------------*/
+.pri-footer {
+	background: $background--gray;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 1rem $pad 2rem;
+
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+
+	&__col {
+		flex-basis: 10rem;
+		flex-grow: 1;
+		width: 10rem;
+		margin: 0 1rem;
+		opacity: .88;
+	}
+
+	&__association {
+		color: $background--light;
+		font-size: .9em;
+	}
+
+	&__logo {
+		max-width: 16rem;
+
+		@media (min-width: $brk--phone) {
+			margin: .3rem 0;
+		}
+	}
+
+	&__name {
+		font-family: $font--heavy;
+	}
+
+	&__link {
+		color: $background--light;
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	&__heading {
+		color: $background--light;
+		margin: .8em 0 .6em;
+		font-size: 1.5em;
+	}
+
+	&__sub-heading {
+		color: $background--light;
+		margin: 1rem 0 .6em;
+		font-size: .9em;
+	}
+
+	&__paragraph {
+		&--small {
+			font-size: .8em;
+		}
+	}
+
+	&__divider {
+		border-width: 0 0 1px;
+		border-color: transparentize($background--light, 0.5);
+		width: 2rem;
+		margin: 1.8rem 0;
+	}
+}
+
+
+
+.sitemap {
+	overflow: hidden;
+	color: $background--light;
+
+	&__link {
+		padding: .2rem 0;
+		display: block;
+	}
 }

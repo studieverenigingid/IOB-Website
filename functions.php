@@ -3,10 +3,18 @@
   include 'inc/event-post-type.php';
   include 'inc/company-post-type.php';
 
+  // Custom Fields
+  include 'inc/event-custom-fields.php';
+
+  // theme includes
+  include 'inc/walkers.php';
+
   register_nav_menus( array(
-    'primary' => 'Primary Menu'
+    'primary-menu' => 'Primary Menu',
+		'sitemap' => 'Footer Sitemap'
   ) );
 
+  add_action( 'after_setup_theme', 'custom_theme_setup' );
   add_action('init', 'modify_jquery');
 
   function custom_theme_setup() {
@@ -14,6 +22,9 @@
     add_theme_support( 'html5' ); // Make the search form input type="search"
     add_theme_support( 'title-tag' ); // Fix the document title tag
   }
+
+  // Add image sizes
+  add_image_size( 'front-page-hero', 1920, 1080, true );
 
   // Disable posts
   function remove_posts_menu() {
