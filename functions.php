@@ -1,4 +1,7 @@
 <?php
+  // custom post types
+  include 'inc/event-post-type.php';
+  include 'inc/company-post-type.php';
 
   register_nav_menus( array(
     'primary' => 'Primary Menu'
@@ -11,6 +14,12 @@
     add_theme_support( 'html5' ); // Make the search form input type="search"
     add_theme_support( 'title-tag' ); // Fix the document title tag
   }
+
+  // Disable posts
+  function remove_posts_menu() {
+    remove_menu_page('edit.php');
+  }
+  add_action('admin_init', 'remove_posts_menu');
 
   /* Replace Wordpress’s version of jQuery with Google API version, since most
   browsers will have it in their cache. */
