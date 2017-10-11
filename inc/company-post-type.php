@@ -54,4 +54,4 @@ function order_companies_random( $query ) {
 		$query->set( 'orderby', 'rand' );
 	}
 }
-add_action( 'pre_get_posts', 'order_companies_by_start_date' );
+add_action( 'pre_get_posts', 'order_companies_random' );
