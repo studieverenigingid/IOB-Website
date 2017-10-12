@@ -5,6 +5,30 @@
 
   <?php the_post_thumbnail('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>
 
+  <div class="section section--stats">
+    <?php
+
+    // check if the repeater field has rows of data
+    if( have_rows('stats_repeat_group') ):
+
+     	// loop through the rows of data
+        while ( have_rows('stats_repeat_group') ) : the_row();?>
+            <div class="section--stats__group">
+              <h3><?=the_sub_field('stat_value');?>+</h3>
+              <h4><?=the_sub_field('stat_description');?></h4>
+            </div>
+
+        <?php endwhile;
+
+    else :
+
+        // no rows found
+
+    endif;
+
+    ?>
+  </div>
+
   <div class="section">
     <h2 class="section__title">The Fair</h2>
     <?= the_content(); ?>

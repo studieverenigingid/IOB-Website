@@ -4,6 +4,7 @@
   include 'inc/company-post-type.php';
 
   // Custom Fields
+  include 'inc/front-page-custom-fields.php';
   include 'inc/event-custom-fields.php';
 
   // theme includes
