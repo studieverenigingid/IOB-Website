@@ -204,7 +204,7 @@ blockquote {
 	border: none;
 	font-size: 1em;
 	font-family: $font--light;
-	@include button-background($accent);
+	@include button-background($accent--secondary);
 
 	&:hover, &:focus {
 		outline: none;
@@ -468,6 +468,12 @@ blockquote {
 
 .section {
 	&--hero {
+		display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+		height: 75vh;
+		width: 100%;
 		position: relative;
 	}
 }
@@ -475,9 +481,9 @@ blockquote {
 .thumbnail {
 	&--front-page {
 		filter: grayscale(100%);
-		width: 100%;
-		height: auto;
-		display: block;
+		flex-shrink: 0;
+		min-width: 100%;
+		min-height: 100%
 	}
 }
 
@@ -526,6 +532,25 @@ blockquote {
 		font-size: 1.2em;
 	}
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Stats
+\*-------------------------------------*/
+
+.section {
+	&__wrapper {
+		&--fair {
+			p {
+				margin: 0 $pad 2*$pad;
+			}
+		}
+	}
+}
+
 
 
 

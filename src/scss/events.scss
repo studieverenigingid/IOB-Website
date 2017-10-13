@@ -19,8 +19,8 @@
 
 .event {
   &--small {
-    flex-basis: 30%;
-    padding: 2*$pad 0;
+    flex-basis: 33.33%;
+    padding: 0 $pad 2*$pad;
 
     img {
       width: 100%;
@@ -38,7 +38,7 @@
 
     @media (max-width: $brk--real-phone) {
       flex-basis: 100%;
-      padding: $pad 0;
+      padding: 0 $pad $pad;
     }
   }
 
