@@ -86,3 +86,55 @@
   	}
   }
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Single event styles
+\*-------------------------------------*/
+
+.event {
+  &--single {
+    &__top {
+      width: 100%;
+  		padding: .1rem 0;
+  		margin: 0 0 2.5rem;
+  		background: $accent;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+  	}
+
+    &__title {
+      font-size: 3em;
+  		color: $background--light;
+
+      @include fatUnderline();
+
+      @media (max-width: $brk--phone) {
+        font-size: 2.6em;
+      }
+  	}
+
+    &__meta {
+      color: white;
+      margin: 0 0 2rem;
+    }
+
+    &__img {
+      width: 100%;
+      height: auto;
+      max-width: 768px;
+      margin: 0 auto -5rem;
+      display: block;
+    }
+
+    &__wrapper {
+      margin: 0 auto;
+      max-width: 768px;
+      padding: 2*$pad $pad;
+    }
+  }
+}
