@@ -8,31 +8,26 @@
     <div class="gradient-pattern"></div>
   </div>
 
+  <!-- *************** -->
+  <!-- FAIR STATISTICS -->
+  <!-- *************** -->
+
+  <?php if( have_rows('stats_repeat_group') ): ?>
   <div class="section section--stats">
     <div class="section__wrapper">
-      <?php
-
-      // check if the repeater field has rows of data
-      if( have_rows('stats_repeat_group') ):
-
-       	// loop through the rows of data
-          while ( have_rows('stats_repeat_group') ) : the_row();?>
-              <div class="section--stats__group">
-                <h3 class="stat__value"><?=the_sub_field('stat_value');?>+</h3>
-                <h4 class="stat__description"><?=the_sub_field('stat_description');?></h4>
-              </div>
-
-          <?php endwhile;
-
-      else :
-
-          // no rows found
-
-      endif;
-
-      ?>
+      <?php  while ( have_rows('stats_repeat_group') ) : the_row();?>
+          <div class="section--stats__group">
+            <h3 class="stat__value"><?=the_sub_field('stat_value');?>+</h3>
+            <h4 class="stat__description"><?=the_sub_field('stat_description');?></h4>
+          </div>
+        <?php endwhile; ?>
     </div>
   </div>
+  <?php endif; ?>
+
+  <!-- ****** -->
+  <!-- FAIR -->
+  <!-- ****** -->
 
   <div class="section__title__wrapper">
     <h2 class="section__title"><span>The Fair</span></h2>
@@ -43,6 +38,15 @@
     </div>
   </div>
 
+  <!-- ********* -->
+  <!-- COMPANIES -->
+  <!-- ********* -->
+
+  <?php
+    $args = array( 'post_type' => 'company', 'posts_per_page' => 8, 'orderby' => 'rand' );
+    $loop = new WP_Query( $args );
+    if ( $loop->have_posts() ) {
+  ?>
   <div class="section__title__wrapper">
     <h2 class="section__title"><span>The Companies</span></h2>
   </div>
@@ -61,6 +65,19 @@
       <?php endwhile; ?>
     </div>
   </div>
+  <?php
+    }
+  ?>
+
+  <!-- ****** -->
+  <!-- EVENTS -->
+  <!-- ****** -->
+
+  <?php
+    $args = array( 'post_type' => 'event', 'posts_per_page' => 3 );
+    $loop = new WP_Query( $args );
+    if ( $loop->have_posts() ) {
+  ?>
 
   <div class="section__title__wrapper">
     <h2 class="section__title"><span>Upcoming Events</span></h2>
@@ -68,15 +85,14 @@
   <div class="section">
     <div class="section__wrapper">
       <?php
-      $args = array( 'post_type' => 'event', 'posts_per_page' => 3 );
-      $loop = new WP_Query( $args );
-
       while ( $loop->have_posts() ) : $loop->the_post(); ?>
         <div class="event--small">
           <a href="<?= the_permalink();?>">
-            <h3><?= the_title(); ?></h3>
             <?= the_post_thumbnail('medium'); ?>
-
+          </a>
+          <a href="<?= the_permalink();?>">
+            <h3><?= the_title(); ?></h3>
+          </a>
             <?php
       				$start = new DateTime(get_field('start_datetime'));
       				$start->setTimezone( new DateTimeZone('Europe/Amsterdam') );
@@ -100,12 +116,13 @@
       					}
       					echo ($location_name) ? ' @ ' . $location_name : '';
       				?>
-            <p><?= the_excerpt(); ?></p>
-          </a>
         </div>
       <?php endwhile; ?>
     </div>
   </div>
+  <?php
+    }
+  ?>
 
 <?php
   endwhile;
