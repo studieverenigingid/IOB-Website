@@ -72,6 +72,7 @@
 
     &__title {
       font-size: 4em;
+      line-height: 1em;
   		color: $background--light;
 
       @include fatUnderline();
