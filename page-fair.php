@@ -27,16 +27,16 @@
     </div>
   </div>
 
-  <div class="section__title__wrapper">
-    <h2 class="section__title"><span>Map</span></h2>
-  </div>
-  <div class="section">
-    <div class="section__wrapper">
-      <?php if(get_field('fair_map')) {?>
-        <img src="<?= the_field('fair_map');?>" class="fair__map">
-      <?php } ?>
+  <?php if(get_field('fair_map')) {?>
+    <div class="section__title__wrapper">
+      <h2 class="section__title"><span>Map</span></h2>
     </div>
-  </div>
+    <div class="section">
+      <div class="section__wrapper">
+          <img src="<?= the_field('fair_map');?>" class="fair__map">
+      </div>
+    </div>
+  <?php } ?>
 
 <?php
   get_footer();
