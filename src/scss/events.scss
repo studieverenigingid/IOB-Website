@@ -20,6 +20,7 @@
 .event {
   &--small {
     flex-basis: 33.33%;
+    flex-grow: 1;
     padding: 0 $pad 2*$pad;
 
     img {
@@ -40,11 +41,6 @@
       flex-basis: 100%;
       padding: 0 $pad $pad;
     }
-  }
-
-  &__archive-link {
-    margin: 0 auto;
-    text-decoration: none;
   }
 }
 

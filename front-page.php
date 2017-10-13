@@ -38,7 +38,9 @@
       <?php
       $page = get_page_by_title( 'fair' );
       if (isset($page)) {?>
-        <a href="<?=get_permalink( $page )?>" class="button">Discover the fair <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        <div class="section__link__wrapper">
+          <a href="<?=get_permalink( $page )?>" class="button">Discover the fair <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+        </div>
       <?php }?>
     </div>
   </div>
@@ -57,18 +59,16 @@
   </div>
   <div class="section">
     <div class="section__wrapper section__wrapper--companies">
-      <?php
-      $args = array( 'post_type' => 'company', 'posts_per_page' => 10, 'orderby' => 'rand' );
-      $loop = new WP_Query( $args );
-
-      while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
         <div class="company--small">
           <a href="<?= the_permalink();?>">
             <?= the_post_thumbnail('medium'); ?>
           </a>
         </div>
       <?php endwhile; ?>
-      <a href="<?php echo get_post_type_archive_link('company'); ?>" class="company__archive-link button">See all companies <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      <div class="section__link__wrapper">
+        <a href="<?php echo get_post_type_archive_link('company'); ?>" class="button">See all companies <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
   <?php
@@ -138,7 +138,9 @@
       				?>
         </div>
       <?php endwhile; ?>
-      <a href="<?php echo get_post_type_archive_link('event'); ?>" class="event__archive-link button">See all events <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      <div class="section__link__wrapper">
+        <a href="<?php echo get_post_type_archive_link('event'); ?>" class="button">See all events <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      </div>
     </div>
   </div>
   <?php

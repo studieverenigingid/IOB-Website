@@ -27,4 +27,12 @@ $brk--large-desktop: 1920px;
     margin: 0 auto;
     padding: 2*$pad $pad;
   }
+
+  &__link {
+    &__wrapper {
+      flex-basis: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 }
