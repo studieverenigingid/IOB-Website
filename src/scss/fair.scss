@@ -48,4 +48,9 @@
   &__descr {
 		font-size: 1.3em;
 	}
+
+  &__map {
+    max-width: 100%;
+    align-self: flex-start;
+  }
 }

@@ -32,7 +32,9 @@
   </div>
   <div class="section">
     <div class="section__wrapper">
-
+      <?php if(get_field('fair_map')) {?>
+        <img src="<?= the_field('fair_map');?>" class="fair__map">
+      <?php } ?>
     </div>
   </div>
 
