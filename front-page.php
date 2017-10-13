@@ -73,6 +73,7 @@
   </div>
   <?php
     }
+    wp_reset_postdata();
   ?>
 
   <!-- ****** -->
@@ -80,9 +81,22 @@
   <!-- ****** -->
 
   <?php
-    $args = array( 'post_type' => 'event', 'posts_per_page' => 3 );
-    $loop = new WP_Query( $args );
-    if ( $loop->have_posts() ) {
+    $today = date('Ymd');
+    $upcoming_loop = new WP_Query( array(
+    'post_type' => 'event',
+    'posts_per_page' => 3,
+    'meta_query' => array(
+    array(
+      'key'     => 'start_datetime',
+      'compare' => '>=',
+      'value'   => $today,
+      'type'    => 'DATE'
+    ),
+    ),
+    'orderby' => 'start_datetime',
+    'order' => 'ASC',
+    ) );
+    if ($upcoming_loop->have_posts()) :
   ?>
 
   <div class="section__title__wrapper">
@@ -91,7 +105,7 @@
   <div class="section">
     <div class="section__wrapper section__wrapper--events">
       <?php
-      while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      while ( $upcoming_loop->have_posts() ) : $upcoming_loop->the_post(); ?>
         <div class="event--small">
           <a href="<?= the_permalink();?>">
             <?= the_post_thumbnail('medium'); ?>
@@ -128,7 +142,8 @@
     </div>
   </div>
   <?php
-    }
+    endif;
+    wp_reset_postdata();
   ?>
 
 <?php
