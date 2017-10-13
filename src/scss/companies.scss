@@ -22,6 +22,7 @@
     background: white;
     flex-basis: 20%;
     flex-grow: 1;
+    flex-flow: row wrap;
     margin: 0 2.5% 2*$pad;
     padding: $pad;
     display: flex;
@@ -36,6 +37,49 @@
     @media (max-width: $brk--real-phone) {
       flex-basis: 45%;
       padding: $pad/2;
+    }
+  }
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Archive styles
+\*-------------------------------------*/
+
+.company {
+  &--small {
+    &__title {
+      font-size: 1.2em;
+      width: 100%;
+
+      a {
+        text-decoration: none;
+        color: black;
+
+        &:hover, &:focus {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__type {
+      font-size: .8em;
+    }
+
+    &__link {
+      font-size: .8em;
+      width: 100%;
+
+      text-decoration: none;
+      color: $accent--secondary;
+
+      &:hover, &:focus {
+        color: darken($accent--secondary, 15%);
+        text-decoration: underline;
+      }
     }
   }
 }

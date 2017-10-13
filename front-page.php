@@ -60,11 +60,7 @@
   <div class="section">
     <div class="section__wrapper section__wrapper--companies">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-        <div class="company--small">
-          <a href="<?= the_permalink();?>">
-            <?= the_post_thumbnail('medium'); ?>
-          </a>
-        </div>
+        <?php include 'inc/company-small.php';?>
       <?php endwhile; ?>
       <div class="section__link__wrapper">
         <a href="<?php echo get_post_type_archive_link('company'); ?>" class="button">See all companies <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
