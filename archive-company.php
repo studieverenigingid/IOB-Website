@@ -5,8 +5,8 @@
 
   get_header();
 ?>
-  <main class="fair__top">
-    <h1 class="fair__title"><span><?= post_type_archive_title(); ?></span></h1>
+  <main class="company--archive__top">
+    <h1 class="company--archive__title"><span><?= post_type_archive_title(); ?></span></h1>
   </main>
 
   <?php
