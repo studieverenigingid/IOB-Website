@@ -2,7 +2,7 @@
   <footer class="pri-footer">
 
   <div class="pri-footer__association pri-footer__col">
-    <a href="<?php echo get_site_url(); ?>">
+    <a href="https://studieverenigingid.nl/">
       <picture>
         <source srcset="<?=$img_folder?>logo.svg" type="image/svg+xml">
           <img class="pri-footer__logo" alt="Study association i.d"
@@ -39,7 +39,7 @@
       <a href="https://www.instagram.com/studieverenigingid/" class="button button--insta">
           <i class="fa fa-instagram"></i> Instagram
       </a>
-      <a href="https://www.facebook.com/studieverenigingi.d/" class="button button--facebook">
+      <a href="https://www.facebook.com/iobedrijvenbeurs" class="button button--facebook">
         <i class="fa fa-facebook"></i> Facebook
       </a>
     </div>
