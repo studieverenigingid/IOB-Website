@@ -35,7 +35,8 @@
 	font-weight: 300;
 }
 
-
+// Grids (default breakpoints, wrappers, containers, etc.)
+@import "grid";
 
 
 
@@ -62,16 +63,6 @@ $social:
 
 //transitions
 $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
-
-// Grid
-$pad: 20px;
-
-//breakpoints
-$brk--real-phone: 568px;
-$brk--phone: 768px;
-$brk--tablet: 992px;
-$brk--desktop: 1200px;
-$brk--large-desktop: 1920px;
 
 
 
@@ -136,7 +127,7 @@ h1 {
 h2 {
 	font-size: 2.4em;
 	color: black;
-	margin: 1.5em (2 * $pad) .5em;
+	margin: 1.5em 0 .5em;
 }
 
 h3 {
@@ -155,7 +146,36 @@ blockquote {
 	border-left: .7em solid #eee;
 }
 
+.section {
+	&__title {
+		color: white;
+		position: relative;
 
+		span {
+			position: relative;
+			z-index: 2;
+		}
+
+		&:after {
+			content: '';
+			display: block;
+			left: 8px;
+			z-index: 1;
+			position: absolute;
+			bottom: 8px;
+			width: 108%;
+			height: 25px;
+			top: 50%;
+			margin-top: -1px;
+			background: $accent--secondary;
+		}
+
+		&__wrapper {
+			padding: 2*$pad 0;
+			background: $accent;
+		}
+	}
+}
 
 
 
@@ -446,11 +466,52 @@ blockquote {
 	Hero
 \*-------------------------------------*/
 
+.section {
+	&--hero {
+		position: relative;
+	}
+}
+
 .thumbnail {
 	&--front-page {
 		filter: grayscale(100%);
 		width: 100%;
 		height: auto;
+		display: block;
+	}
+}
+
+.gradient-pattern {
+  box-sizing: content-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+  border: none;
+  color: rgb(255, 255, 255);
+  text-overflow: clip;
+  background: radial-gradient(rgb(0,0,0) 20%, rgba(0,0,0,0) 21%), radial-gradient(rgb(0,0,0) 20%, rgba(0,0,0,0) 21%), rgba(0, 0, 0, 0);
+  background-position: 0 0, .4rem .4rem;
+  background-origin: padding-box;
+  background-clip: border-box;
+  background-size: .8rem .8rem;
+}
+
+
+
+
+
+/*-------------------------------------*\
+	Stats
+\*-------------------------------------*/
+
+.section {
+	&--stats {
+		&__group {
+			padding: $pad;
+			text-align: center;
+		}
 	}
 }
 
@@ -543,3 +604,11 @@ blockquote {
 		display: block;
 	}
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Imports
+\*-------------------------------------*/

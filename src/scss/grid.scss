@@ -1,0 +1,24 @@
+// Grid
+$pad: 20px;
+
+//breakpoints
+$brk--real-phone: 568px;
+$brk--phone: 768px;
+$brk--tablet: 992px;
+$brk--desktop: 1200px;
+$brk--large-desktop: 1920px;
+
+.section {
+  &__title {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
