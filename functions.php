@@ -10,6 +10,7 @@
 
   // theme includes
   include 'inc/walkers.php';
+  include 'inc/customizer.php';
 
   register_nav_menus( array(
     'primary-menu' => 'Primary Menu',
@@ -18,6 +19,8 @@
 
   add_action( 'after_setup_theme', 'custom_theme_setup' );
   add_action('init', 'modify_jquery');
+  add_action( 'customize_register', 'iob_customize_register' );
+  add_action( 'wp_head', 'iob_customize_css');
 
   function custom_theme_setup() {
     add_theme_support( 'post-thumbnails' ); // Allow posts to have thumbnails
