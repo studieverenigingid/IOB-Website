@@ -1,0 +1,46 @@
+/*-------------------------------------*\
+	IOB-WEBSITE WORDPRESS THEME: FAIR
+	See style.css for the WP info.
+	- Nils Westhoff
+
+	companies.scss:
+	+ front-page styles
+	+ fair page styles
+\*-------------------------------------*/
+
+
+
+
+
+/*-------------------------------------*\
+	Front-page styles
+\*-------------------------------------*/
+
+
+
+
+
+/*-------------------------------------*\
+	Front-page styles
+\*-------------------------------------*/
+
+.fair {
+  &__top {
+		padding: .1rem 5%;
+		margin: 0 0 2*$pad;
+		background: $accent;
+    display: flex;
+    justify-content: center;
+	}
+
+  &__title {
+    font-size: 4em;
+		color: $background--light;
+
+    @include fatUnderline();
+	}
+
+  &__descr {
+		font-size: 1.3em;
+	}
+}

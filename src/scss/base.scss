@@ -9,6 +9,7 @@
 	base.scss
 	+ Dependencies
 	+ Variables (colors and fonts)
+	+ Mixins
 	+ Imports
 
 	...
@@ -40,6 +41,8 @@
 
 
 
+
+
 /*-------------------------------------*\
 	Variables
 \*-------------------------------------*/
@@ -67,6 +70,33 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 
 
 
+
+/*-------------------------------------*\
+	Mixins
+\*-------------------------------------*/
+
+@mixin fatUnderline() {
+	position: relative;
+
+	span {
+		position: relative;
+		z-index: 2;
+	}
+
+	&:after {
+		content: '';
+		display: block;
+		left: 0;
+		z-index: 1;
+		position: absolute;
+		bottom: 8px;
+		width: 104%;
+		height: 25px;
+		top: 50%;
+		margin-top: -1px;
+		background: $accent--secondary;
+	}
+}
 
 /*-------------------------------------*\
 	Reset
@@ -149,26 +179,8 @@ blockquote {
 .section {
 	&__title {
 		color: white;
-		position: relative;
 
-		span {
-			position: relative;
-			z-index: 2;
-		}
-
-		&:after {
-			content: '';
-			display: block;
-			left: 0;
-			z-index: 1;
-			position: absolute;
-			bottom: 8px;
-			width: 104%;
-			height: 25px;
-			top: 50%;
-			margin-top: -1px;
-			background: $accent--secondary;
-		}
+		@include fatUnderline();
 
 		&__wrapper {
 			padding: 2*$pad 0;
@@ -518,6 +530,11 @@ blockquote {
 			padding: $pad;
 			text-align: center;
 			margin: 0 2*$pad;
+
+			@media (max-width: $brk--phone) {
+				padding: 0;
+				margin: 0 $pad;
+			}
 		}
 	}
 }
@@ -546,6 +563,7 @@ blockquote {
 		&--fair {
 			p {
 				margin: 0 $pad 2*$pad;
+				font-size: 1.3em;
 			}
 		}
 	}
@@ -653,3 +671,5 @@ blockquote {
 @import 'companies';
 
 @import 'events';
+
+@import 'fair';
