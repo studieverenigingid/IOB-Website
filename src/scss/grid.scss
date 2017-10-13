@@ -1,5 +1,5 @@
 // Grid
-$pad: 20px;
+$pad: 1rem;
 
 //breakpoints
 $brk--real-phone: 568px;
@@ -10,15 +10,21 @@ $brk--large-desktop: 1920px;
 
 .section {
   &__title {
-    max-width: 960px;
+    display: inline-block;
     margin: 0 auto;
+
+    &__wrapper {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__wrapper {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     max-width: 960px;
     margin: 0 auto;
+    padding: 2*$pad $pad;
   }
 }

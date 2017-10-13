@@ -159,11 +159,11 @@ blockquote {
 		&:after {
 			content: '';
 			display: block;
-			left: 8px;
+			left: 0;
 			z-index: 1;
 			position: absolute;
 			bottom: 8px;
-			width: 108%;
+			width: 104%;
 			height: 25px;
 			top: 50%;
 			margin-top: -1px;

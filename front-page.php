@@ -63,6 +63,7 @@
           </a>
         </div>
       <?php endwhile; ?>
+      <a href="<?php echo get_post_type_archive_link('company'); ?>" class="company__archive-link button">See all companies</a>
     </div>
   </div>
   <?php
@@ -83,7 +84,7 @@
     <h2 class="section__title"><span>Upcoming Events</span></h2>
   </div>
   <div class="section">
-    <div class="section__wrapper">
+    <div class="section__wrapper section__wrapper--events">
       <?php
       while ( $loop->have_posts() ) : $loop->the_post(); ?>
         <div class="event--small">
@@ -118,6 +119,7 @@
       				?>
         </div>
       <?php endwhile; ?>
+      <a href="<?php echo get_post_type_archive_link('event'); ?>" class="event__archive-link button">See all events</a>
     </div>
   </div>
   <?php

@@ -31,5 +31,14 @@
       max-width: 100%;
       height: auto;
     }
+
+    @media (max-width: $brk--real-phone) {
+      flex-basis: 45%;
+      padding: $pad/2;
+    }
+  }
+
+  &__archive-link {
+    margin: 0 auto;
   }
 }
