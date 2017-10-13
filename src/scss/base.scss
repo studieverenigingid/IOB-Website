@@ -84,7 +84,7 @@ html {
 
 body {
 	margin: 0;
-	background: white;
+	background: $background--light;
 	font-family: $font--light;
 	font-size: 16px;
 	overflow-x: hidden;
@@ -511,7 +511,19 @@ blockquote {
 		&__group {
 			padding: $pad;
 			text-align: center;
+			margin: 0 2*$pad;
 		}
+	}
+}
+
+.stat {
+	&__value {
+		font-family: $font--light;
+		font-size: 3em;
+	}
+
+	&__description {
+		font-size: 1.2em;
 	}
 }
 
@@ -612,3 +624,7 @@ blockquote {
 /*-------------------------------------*\
 	Imports
 \*-------------------------------------*/
+
+@import 'companies';
+
+@import 'events';

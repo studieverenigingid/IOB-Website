@@ -1,0 +1,26 @@
+/*-------------------------------------*\
+	IOB-WEBSITE WORDPRESS THEME: EVENTS
+	See style.css for the WP info.
+	- Nils Westhoff
+
+	companies.scss:
+	+ front-page styles
+	+ events archive styles
+	+ single event styles
+\*-------------------------------------*/
+
+
+
+
+
+/*-------------------------------------*\
+	Front-page styles
+\*-------------------------------------*/
+
+.event {
+  &--small {
+    flex-basis: 33.3%;
+    margin: 2.5%;
+    padding: $pad;
+  }
+}

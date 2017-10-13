@@ -1,0 +1,35 @@
+/*-------------------------------------*\
+	IOB-WEBSITE WORDPRESS THEME: COMPANIES
+	See style.css for the WP info.
+	- Nils Westhoff
+
+	companies.scss:
+	+ front-page styles
+	+ companies archive styles
+	+ single company styles
+\*-------------------------------------*/
+
+
+
+
+
+/*-------------------------------------*\
+	Front-page styles
+\*-------------------------------------*/
+
+.company {
+  &--small {
+    background: white;
+    flex-basis: 20%;
+    margin: 2.5%;
+    padding: $pad;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
