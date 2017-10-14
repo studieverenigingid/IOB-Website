@@ -98,6 +98,31 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 	}
 }
 
+@mixin generate-dots($size, $start, $decrease, $opacity, $times) {
+    $dots: ();
+    @for $i from 0 through $times {
+      $dots: append($dots,
+				radial-gradient(
+				circle,
+				rgba(0,0,0,1-$i*$decrease*$opacity) percentage($start - ($i*$decrease)),
+				transparent 0
+				)
+			, comma);
+    }
+
+		$pos: ();
+		@for $i from 0 through $times {
+			$pos: append($pos,
+				($i*$size/2 ($i*$size/2)-$size)
+			, comma)
+		}
+
+		background-size: $size $size;
+    background-image: $dots;
+		background-position: $pos;
+		background-repeat: repeat-x;
+	}
+
 /*-------------------------------------*\
 	Reset
 \*-------------------------------------*/
@@ -484,7 +509,7 @@ blockquote {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-		height: 75vh;
+		height: 83.7vh;
 		width: 100%;
 		position: relative;
 	}
@@ -500,20 +525,13 @@ blockquote {
 }
 
 .gradient-pattern {
-  box-sizing: content-box;
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
-  border: none;
-  color: rgb(255, 255, 255);
-  text-overflow: clip;
-  background: radial-gradient(rgb(0,0,0) 20%, rgba(0,0,0,0) 21%), radial-gradient(rgb(0,0,0) 20%, rgba(0,0,0,0) 21%), rgba(0, 0, 0, 0);
-  background-position: 0 0, .4rem .4rem;
-  background-origin: padding-box;
-  background-clip: border-box;
-  background-size: .8rem .8rem;
+	transform: scaleY(-1);
+	@include generate-dots(1em, .55, .01, 3, 35);
 }
 
 
