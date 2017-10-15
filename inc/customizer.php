@@ -42,8 +42,9 @@
       .bies{background:<?= get_theme_mod('accent_color'); ?>;}
       .company--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .event--single__top{background:<?= get_theme_mod('accent_color'); ?>;}
-      .fair__top{padding:.1rem 5%;margin:0;background:<?= get_theme_mod('accent_color'); ?>;}
+      .fair__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .event--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
+      .section--hero__container > * {background:<?= get_theme_mod('accent_color'); ?>;}
 
       /* secondary colors */
       .section__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>;}
@@ -53,6 +54,7 @@
       .event--archive__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
       .event--single__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
       .fair__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
+      .section--hero__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
 
       .button:hover{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 

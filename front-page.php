@@ -6,6 +6,17 @@
   <div class="section section--hero">
     <?php the_post_thumbnail('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>
     <div class="gradient-pattern"></div>
+    <div class="section--hero__container">
+      <img class="section--hero__logo" alt="Study association i.d"
+        srcset="<?=$img_folder?>iob-logo.png 1x,
+          <?=$img_folder?>iob-logo@2x.png 2x"
+        src="<?=$img_folder?>iob-logo.png">
+      <h1 class="section--hero__title"><span>Industrial Design Engineering Business Fair</span></h1>
+      <h3 class="section--hero__date">
+        March 6th and 7th <br>
+        Faculty Hall IDE
+      </h3>
+    </div>
   </div>
 
   <!-- *************** -->
