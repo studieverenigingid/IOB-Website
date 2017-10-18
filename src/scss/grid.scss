@@ -15,6 +15,7 @@ $brk--large-desktop: 1920px;
 
     &__wrapper {
       display: flex;
+      flex-flow: row wrap;
       justify-content: center;
     }
   }
@@ -28,9 +29,15 @@ $brk--large-desktop: 1920px;
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
+    align-items: center;
     max-width: 960px;
     margin: 0 auto;
     padding: 2*$pad $pad;
+
+    p, img {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__link {
