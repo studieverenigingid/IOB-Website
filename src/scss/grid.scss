@@ -19,6 +19,11 @@ $brk--large-desktop: 1920px;
     }
   }
 
+  &__subtitle {
+    flex-basis: 100%;
+    flex-grow: 1;
+  }
+
   &__wrapper {
     display: flex;
     flex-flow: row wrap;

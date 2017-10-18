@@ -86,13 +86,13 @@
   <div class="section__title__wrapper">
     <h2 class="section__title"><span>Program</span></h2>
   </div>
-  <div class="section">
+  <div class="section section--fair">
 
     <?php
       if ($prefair_loop->have_posts()) {
     ?>
-    <div class="section__wrapper">
-      <h3>Pre-Fair</h3>
+    <div class="section__wrapper section__wrapper--fair">
+      <h3 class="section__subtitle">Pre-Fair</h3>
       <div>
         <?php while($prefair_loop->have_posts()) : $prefair_loop->the_post(); ?>
           <?php include 'inc/event-micro.php';?>
@@ -105,8 +105,8 @@
       if ($fair_loop->have_posts()) {
     ?>
 
-    <div class="section__wrapper">
-      <h3>Fair</h3>
+    <div class="section__wrapper section__wrapper--fair">
+      <h3 class="section__subtitle">Fair</h3>
       <div>
         <?php while($fair_loop->have_posts()) : $fair_loop->the_post(); ?>
           <?php include 'inc/event-micro.php';?>

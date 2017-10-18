@@ -16,6 +16,6 @@
       <?php $current_date = $start->format('d-m-Y'); ?>
       <?php } ?>
 
-  <span><?= $start_time . " - " . $end_time;?> <a href="<?= the_permalink();?>"><?= the_title(); ?></a></span>
+  <h5><?= $start_time . " - " . $end_time;?> <a href="<?= the_permalink();?>"><?= the_title(); ?></a></h5>
 
 </div>
