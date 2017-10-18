@@ -110,6 +110,7 @@
 
     &__title {
       font-size: 3em;
+      text-align: center;
   		color: $background--light;
 
       @include fatUnderline();
@@ -122,6 +123,8 @@
     &__meta {
       color: white;
       margin: 0 0 2rem;
+      text-align: center;
+      flex-basis: 100%;
     }
 
     &__img {
