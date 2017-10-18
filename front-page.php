@@ -13,7 +13,14 @@
         src="<?=$img_folder?>iob-logo.png">
       <h1 class="section--hero__title"><span>Industrial Design Engineering Business Fair</span></h1>
       <h3 class="section--hero__date">
-        March 6th and 7th <br>
+        <?php
+          $fair_start_month = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'F');
+          $fair_start_day = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'dS');
+          $fair_end_month = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'F');
+          $fair_end_day = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'dS');
+         ?>
+
+        <?= $fair_start_month ?> <?= $fair_start_day ?> to <?php if($fair_start_month != $fair_end_month){ echo $fair_end_month; }; ?> <?= $fair_end_day ?> <br>
         Faculty Hall IDE
       </h3>
     </div>
