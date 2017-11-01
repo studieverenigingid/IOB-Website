@@ -36,12 +36,7 @@
   <div class="pri-footer__paragraph pri-footer__col">
     <h2 class="pri-footer__heading">Social media</h2>
     <div>
-      <a href="https://www.instagram.com/studieverenigingid/" class="button button--insta" target="_blank">
-          <i class="fa fa-instagram"></i> Instagram
-      </a>
-      <a href="https://www.facebook.com/iobedrijvenbeurs" class="button button--facebook" target="_blank">
-        <i class="fa fa-facebook"></i> Facebook
-      </a>
+      <?php include 'inc/social-buttons.php';?>
     </div>
   </div>
 

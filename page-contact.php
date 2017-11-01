@@ -14,6 +14,7 @@
     <div class="section">
       <div class="section__wrapper">
         <p class="fair__descr"><?php echo get_the_content(); ?></p>
+        <?php include 'inc/social-buttons.php';?>
       </div>
     </div>
 

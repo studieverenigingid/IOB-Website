@@ -8,7 +8,10 @@
   include 'inc/event-custom-fields.php';
   include 'inc/company-custom-fields.php';
   include 'inc/fair-custom-fields.php';
+  include 'inc/dynamic-darken.php';
+  include 'inc/contact-custom-fields.php';
   include 'inc/option-custom-fields.php';
+  include 'inc/save-custom-css.php';
 
   // theme includes
   include 'inc/walkers.php';

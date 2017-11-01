@@ -27,7 +27,9 @@ global $img_folder;
 		'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 		wp_enqueue_style('main',
 			get_template_directory_uri() . '/static/css/main.css',
-			array(), $theme_info->version ); ?>
+			array(), $theme_info->version );
+    wp_enqueue_style( 'custom-styles',
+      get_template_directory_uri() . '/static/css/custom-options.css' ); ?>
 
     <?php wp_enqueue_script( 'scripts',
     get_template_directory_uri() . '/static/js/main.js',
