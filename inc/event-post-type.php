@@ -33,7 +33,9 @@ function create_event_post_type() {
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'rewrite' => true,
-		'supports' => array( 'editor', 'revisions', 'thumbnail', 'title' )
+		'supports' => array( 'editor', 'revisions', 'thumbnail', 'title' ),
+
+    'taxonomies' => array( 'category' )
 	);
 	register_post_type( 'event' , $args );
 }
