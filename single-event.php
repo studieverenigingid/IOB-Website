@@ -1,4 +1,5 @@
 <?php
+  acf_form_head();
   get_header();
   if(have_posts()) : while(have_posts()) : the_post();
 ?>
@@ -48,6 +49,9 @@
 
   <div class="event--single__wrapper">
     <?php the_content(); ?>
+
+    <h2>Sign-up</h2>
+    <?php include 'inc/event-form.php'; ?>
   </div>
 
 <?php

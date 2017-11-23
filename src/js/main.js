@@ -4,4 +4,5 @@ function onDocReady () {
 	var $ = jQuery;
 	menuToggler();
 	menuSticky();
+	formhandling();
 }

@@ -26,6 +26,8 @@
   add_action('init', 'modify_jquery');
   add_action( 'customize_register', 'iob_customize_register' );
   add_action( 'wp_head', 'iob_customize_css');
+  add_action( 'wp_ajax_nopriv_event_signup', 'event_signup');
+  add_action( 'wp_ajax_event_signup', 'event_signup');
 
   function custom_theme_setup() {
     add_theme_support( 'post-thumbnails' ); // Allow posts to have thumbnails
@@ -54,6 +56,11 @@
       wp_enqueue_script('jquery');
     }
   }
+
+  function event_signup() {
+		include 'inc/event-signup.php';
+		wp_die();
+	}
 
   /* Create a variable for the image folder, so you don’t have to PHP it every time, which would make your code significantly more ugly. */
 	$img_folder = get_bloginfo('template_directory') . '/static/img/';
