@@ -6,6 +6,7 @@
   // Custom Fields
   include 'inc/front-page-custom-fields.php';
   include 'inc/event-custom-fields.php';
+  include 'inc/event-custom-fields-speeddates.php';
   include 'inc/company-custom-fields.php';
   include 'inc/fair-custom-fields.php';
   include 'inc/dynamic-darken.php';
