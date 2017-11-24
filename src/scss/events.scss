@@ -142,3 +142,35 @@
     }
   }
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Event sign-up styles
+\*-------------------------------------*/
+.event-signup {
+  label {
+    display: block;
+  }
+
+  input {
+    background: $background--light;
+    border: none;
+    margin-bottom: 1.2rem;
+
+    &[type=text], &[type=email], &[type=tel] {
+      border-bottom: 1px solid black;
+
+      &:focus {
+        outline: none;
+        border-bottom: 1px solid $accent;
+      }
+    }
+  }
+
+  .button {
+    display: block;
+  }
+}
