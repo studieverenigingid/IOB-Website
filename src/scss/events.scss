@@ -18,38 +18,38 @@
 \*-------------------------------------*/
 
 .event {
-  &--small {
-    flex-basis: 33.33%;
-    flex-grow: 1;
-    padding: 0 $pad 2*$pad;
+	&--small {
+		flex-basis: 33.33%;
+		flex-grow: 1;
+		padding: 0 $pad 2*$pad;
 
-    img {
-      width: 100%;
-      height: auto;
-    }
+		img {
+			width: 100%;
+			height: auto;
+		}
 
-    a {
-      text-decoration: none;
-      color: black;
+		a {
+			text-decoration: none;
+			color: black;
 
-      &:hover, &:focus {
-        text-decoration: underline;
-      }
-    }
+			&:hover, &:focus {
+				text-decoration: underline;
+			}
+		}
 
-    @media (max-width: $brk--real-phone) {
-      flex-basis: 100%;
-      padding: 0 $pad $pad;
-    }
-  }
+		@media (max-width: $brk--real-phone) {
+			flex-basis: 100%;
+			padding: 0 $pad $pad;
+		}
+	}
 }
 
 .section {
-  &__wrapper {
-    &--events {
-      justify-content: space-between;
-    }
-  }
+	&__wrapper {
+		&--events {
+			justify-content: space-between;
+		}
+	}
 }
 
 
@@ -61,31 +61,31 @@
 \*-------------------------------------*/
 
 .event {
-  &--archive {
-    &__top {
-  		padding: .1rem 5%;
-  		margin: 0;
-  		background: $accent;
-      display: flex;
-      justify-content: center;
-  	}
+	&--archive {
+		&__top {
+			padding: .1rem 5%;
+			margin: 0;
+			background: $accent;
+			display: flex;
+			justify-content: center;
+		}
 
-    &__title {
-      font-size: 4em;
-      line-height: 1em;
-  		color: $background--light;
+		&__title {
+			font-size: 4em;
+			line-height: 1em;
+			color: $background--light;
 
-      @include fatUnderline();
+			@include fatUnderline();
 
-      @media (max-width: $brk--phone) {
-        font-size: 2.6em;
-      }
-  	}
+			@media (max-width: $brk--phone) {
+				font-size: 2.6em;
+			}
+		}
 
-    &__descr {
-  		font-size: 1.3em;
-  	}
-  }
+		&__descr {
+			font-size: 1.3em;
+		}
+	}
 }
 
 
@@ -97,50 +97,50 @@
 \*-------------------------------------*/
 
 .event {
-  &--single {
-    &__top {
-      width: 100%;
-  		padding: .1rem 0;
-  		margin: 0 0 2.5rem;
-  		background: $accent;
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-  	}
+	&--single {
+		&__top {
+			width: 100%;
+			padding: .1rem 0;
+			margin: 0 0 2.5rem;
+			background: $accent;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
 
-    &__title {
-      font-size: 3em;
-      text-align: center;
-  		color: $background--light;
+		&__title {
+			font-size: 3em;
+			text-align: center;
+			color: $background--light;
 
-      @include fatUnderline();
+			@include fatUnderline();
 
-      @media (max-width: $brk--phone) {
-        font-size: 2.6em;
-      }
-  	}
+			@media (max-width: $brk--phone) {
+				font-size: 2.6em;
+			}
+		}
 
-    &__meta {
-      color: white;
-      margin: 0 0 2rem;
-      text-align: center;
-      flex-basis: 100%;
-    }
+		&__meta {
+			color: white;
+			margin: 0 0 2rem;
+			text-align: center;
+			flex-basis: 100%;
+		}
 
-    &__img {
-      width: 100%;
-      height: auto;
-      max-width: 768px;
-      margin: 0 auto -5rem;
-      display: block;
-    }
+		&__img {
+			width: 100%;
+			height: auto;
+			max-width: 768px;
+			margin: 0 auto -5rem;
+			display: block;
+		}
 
-    &__wrapper {
-      margin: 0 auto;
-      max-width: 768px;
-      padding: 2*$pad $pad;
-    }
-  }
+		&__wrapper {
+			margin: 0 auto;
+			max-width: 768px;
+			padding: 2*$pad $pad;
+		}
+	}
 }
 
 
@@ -151,26 +151,26 @@
 	Event sign-up styles
 \*-------------------------------------*/
 .event-signup {
-  label {
-    display: block;
-  }
+	label {
+		display: block;
+	}
 
-  input {
-    background: $background--light;
-    border: none;
-    margin-bottom: 1.2rem;
+	input {
+		background: $background--light;
+		border: none;
+		margin-bottom: 1.2rem;
 
-    &[type=text], &[type=email], &[type=tel] {
-      border-bottom: 1px solid black;
+		&[type=text], &[type=email], &[type=tel] {
+			border-bottom: 1px solid black;
+		}
 
-      &:focus {
-        outline: none;
-        border-bottom: 1px solid $accent;
-      }
-    }
-  }
+		&:focus, &:hover, &:active {
+			outline: none;
+			border-bottom: 1px solid $accent;
+		}
+	}
 
-  .button {
-    display: block;
-  }
+	.button {
+		display: block;
+	}
 }

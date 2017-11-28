@@ -18,37 +18,37 @@
 \*-------------------------------------*/
 
 .company {
-  &--small {
-    flex-basis: 25%;
-    flex-flow: column wrap;
-    padding: $pad;
-    display: flex;
-    justify-content: flex-start;
+	&--small {
+		flex-basis: 25%;
+		flex-flow: column wrap;
+		padding: $pad;
+		display: flex;
+		justify-content: flex-start;
 
-    &__thumb {
-      background: white;
-      width: 100%;
-      display: flex;
-      align-items: center;
+		&__thumb {
+			background: white;
+			width: 100%;
+			display: flex;
+			align-items: center;
 
-      &:before {
-        content: "";
-        float: left;
-        padding-top: 100%;
-      }
-    }
+			&:before {
+				content: "";
+				float: left;
+				padding-top: 100%;
+			}
+		}
 
-    img {
-      padding: $pad;
-      width: 100%;
-      height: auto;
-    }
+		img {
+			padding: $pad;
+			width: 100%;
+			height: auto;
+		}
 
-    @media (max-width: $brk--phone) {
-      flex-basis: 50%;
-      padding: $pad/2;
-    }
-  }
+		@media (max-width: $brk--phone) {
+			flex-basis: 50%;
+			padding: $pad/2;
+		}
+	}
 }
 
 
@@ -60,67 +60,67 @@
 \*-------------------------------------*/
 
 .company {
-  &--archive {
-    &__top {
-  		padding: .1rem 5%;
-  		margin: 0;
-  		background: $accent;
-      display: flex;
-      justify-content: center;
-  	}
+	&--archive {
+		&__top {
+			padding: .1rem 5%;
+			margin: 0;
+			background: $accent;
+			display: flex;
+			justify-content: center;
+		}
 
-    &__title {
-      font-size: 4em;
-      line-height: 1em;
-  		color: $background--light;
+		&__title {
+			font-size: 4em;
+			line-height: 1em;
+			color: $background--light;
 
-      @include fatUnderline();
+			@include fatUnderline();
 
-      @media (max-width: $brk--phone) {
-        font-size: 2.6em;
-      }
-  	}
+			@media (max-width: $brk--phone) {
+				font-size: 2.6em;
+			}
+		}
 
-    &__descr {
-  		font-size: 1.3em;
-  	}
-  }
+		&__descr {
+			font-size: 1.3em;
+		}
+	}
 }
 
 .company {
-  &--small {
-    &__title {
-      font-size: 1.2em;
-      width: 100%;
-      margin: 0.8rem 0 .4rem;
+	&--small {
+		&__title {
+			font-size: 1.2em;
+			width: 100%;
+			margin: 0.8rem 0 .4rem;
 
-      a {
-        text-decoration: none;
-        color: black;
+			a {
+				text-decoration: none;
+				color: black;
 
-        &:hover, &:focus {
-          text-decoration: underline;
-        }
-      }
-    }
+				&:hover, &:focus {
+					text-decoration: underline;
+				}
+			}
+		}
 
-    &__type {
-      font-size: .8em;
-      margin: .4rem 0;
-    }
+		&__type {
+			font-size: .8em;
+			margin: .4rem 0;
+		}
 
-    &__link {
-      font-size: .8em;
-      margin: .4rem 0;
-      width: 100%;
+		&__link {
+			font-size: .8em;
+			margin: .4rem 0;
+			width: 100%;
 
-      text-decoration: none;
-      color: $accent--secondary;
+			text-decoration: none;
+			color: $accent--secondary;
 
-      &:hover, &:focus {
-        color: darken($accent--secondary, 15%);
-        text-decoration: underline;
-      }
-    }
-  }
+			&:hover, &:focus {
+				color: darken($accent--secondary, 15%);
+				text-decoration: underline;
+			}
+		}
+	}
 }

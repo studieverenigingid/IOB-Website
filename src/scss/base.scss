@@ -99,16 +99,16 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 @mixin generate-dots($size, $start, $decrease, $opacity, $times) {
-    $dots: ();
-    @for $i from 0 through $times {
-      $dots: append($dots,
+		$dots: ();
+		@for $i from 0 through $times {
+			$dots: append($dots,
 				radial-gradient(
 				circle,
 				rgba(0,0,0,1-$i*$decrease*$opacity) percentage($start - ($i*$decrease)),
 				transparent 0
 				)
 			, comma);
-    }
+		}
 
 		$pos: ();
 		@for $i from 0 through $times {
@@ -118,7 +118,7 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 		}
 
 		background-size: $size $size;
-    background-image: $dots;
+		background-image: $dots;
 		background-position: $pos;
 		background-repeat: repeat-x;
 	}
@@ -506,9 +506,9 @@ blockquote {
 .section {
 	&--hero {
 		display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+		justify-content: center;
+		align-items: center;
+		overflow: hidden;
 		height: 83.7vh;
 		width: 100%;
 		position: relative;

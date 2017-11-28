@@ -1,11 +1,11 @@
 function formhandling() {
 
-	function formDone(response) {
-		console.log(response);
+	function formFail(formData) {
+		console.log(formData.message);
 	}
 
-	function formFail(response) {
-		console.log(response);
+	function formDone(formData) {
+		console.log(formData.message);
 	}
 
 	$(document).on('submit' , 'form.event-signup', function(e) {
@@ -22,9 +22,9 @@ function formhandling() {
 			processData: false,
 			contentType: false
 		}).done(
-			formDone()
+			formDone(formData)
 		).fail(
-			formFail()
+			formFail(formData)
 		);
 	})
 }

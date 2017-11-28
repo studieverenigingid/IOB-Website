@@ -9,16 +9,16 @@
     <?php $post_ID = get_the_ID(); ?>
 
     <label for="first_name" class="">First Name</label>
-    <input name="first_name" type="text" class="" ></input>
+    <input name="first_name" type="text" class="" required></input>
 
     <label for="last_name" class="">Last Name</label>
-    <input name="last_name" type="text" class="" ></input>
+    <input name="last_name" type="text" class="" required></input>
 
     <label for="email" class="">Email address</label>
-    <input name="email" type="email" class="" ></input>
+    <input name="email" type="email" class="" required></input>
 
     <label for="phone_number" class="">Phone Number</label>
-    <input name="phone_number" type="tel" class="" ></input>
+    <input name="phone_number" type="tel" class=""></input>
 
     <label for="resume" class="">Resume</label>
     <input name="resume" type="file" class="" ></input>

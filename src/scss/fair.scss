@@ -25,34 +25,34 @@
 \*-------------------------------------*/
 
 .fair {
-  &__top {
+	&__top {
 		padding: .1rem 5%;
 		margin: 0;
 		background: $accent;
-    display: flex;
-    justify-content: center;
+		display: flex;
+		justify-content: center;
 	}
 
-  &__title {
-    font-size: 4em;
-    line-height: 1em;
+	&__title {
+		font-size: 4em;
+		line-height: 1em;
 		color: $background--light;
 
-    @include fatUnderline();
+		@include fatUnderline();
 
-    @media (max-width: $brk--phone) {
-      font-size: 2.6em;
-    }
+		@media (max-width: $brk--phone) {
+			font-size: 2.6em;
+		}
 	}
 
-  &__descr {
+	&__descr {
 		font-size: 1.3em;
 	}
 
-  &__map {
-    max-width: 100%;
-    align-self: flex-start;
-  }
+	&__map {
+		max-width: 100%;
+		align-self: flex-start;
+	}
 }
 
 
@@ -64,41 +64,41 @@
 \*-------------------------------------*/
 
 .section {
-  &__subtitle {
-    color: $accent;
-  }
+	&__subtitle {
+		color: $accent;
+	}
 
-  &--fair {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-  }
+	&--fair {
+		max-width: 960px;
+		margin: 0 auto;
+		display: flex;
+		flex-flow: row wrap;
+		align-items: flex-start;
+	}
 
-  &__wrapper {
-    &--fair {
-      justify-content: flex-start;
-      flex-basis: 50%;
+	&__wrapper {
+		&--fair {
+			justify-content: flex-start;
+			flex-basis: 50%;
 
-      h3 {
-        margin: 0 0 .4rem;
-      }
+			h3 {
+				margin: 0 0 .4rem;
+			}
 
-      h4 {
-        margin: 0;
-      }
+			h4 {
+				margin: 0;
+			}
 
-      h5 {
-        font-family: $font--light;
-        font-weight: normal;
-        margin: .4rem 0;
-      }
+			h5 {
+				font-family: $font--light;
+				font-weight: normal;
+				margin: .4rem 0;
+			}
 
-      @media (max-width: $brk--phone) {
-        flex-basis: 100%;
-        padding: 1rem;
-      }
-    }
-  }
+			@media (max-width: $brk--phone) {
+				flex-basis: 100%;
+				padding: 1rem;
+			}
+		}
+	}
 }

@@ -19,12 +19,12 @@ function menuSticky() {
 		var scroll = $(window).scrollTop();
 
 		if (scroll > posFromTop) {
-	    menu.addClass("primary-menu--sticky");
+			menu.addClass("primary-menu--sticky");
 			biesImage.addClass("bies__image--sticky");
-	  } else {
+		} else {
 			menu.removeClass("primary-menu--sticky");
 			biesImage.removeClass("bies__image--sticky");
-	  }
+		}
 	});
 
 }
