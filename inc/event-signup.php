@@ -4,6 +4,7 @@ $errors = array();
 
 $field_key = 'field_5a1181b250f6d';
 $post_ID = $_POST['post_ID'];
+$category = $_POST['category'];
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
@@ -25,6 +26,14 @@ if (empty($email)){
 if (empty($phone_number)){
 	$errors[] = 'Your phone number field can not be empty';
 }
+if ($category == 'speeddates' || $category == 'case') {
+	if (empty($motivation)) {
+		$errors[] = 'Your motivation is mandatory';
+	}
+	if (empty($resume)) {
+		$errors[] = 'Your resume is mandatory';
+	}
+}
 
 $new_signup_row = array(
 	'field_5a1182a650f6e'  => $first_name, //first name
@@ -36,7 +45,7 @@ $new_signup_row = array(
 	'field_5a1183e050f74' => $portfolio //portfolio
 );
 
-if (isset($errors)) {
+if (!empty($errors)) {
 	$response['success'] = false;
 	$response['messages'] = $errors;
 } else {

@@ -51,7 +51,9 @@
 		<?php the_content(); ?>
 
 		<h2>Sign-up</h2>
-		<?php include 'inc/event-form.php'; ?>
+		<?php
+			include 'inc/event-form.php';
+		?>
 	</div>
 
 <?php

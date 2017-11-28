@@ -20,16 +20,19 @@
     <label for="phone_number" class="">Phone Number</label>
     <input name="phone_number" type="tel" class="" required></input>
 
-    <label for="resume" class="">Resume</label>
-    <input name="resume" type="file" class="" ></input>
+    <?php if (in_category(array('speeddates', 'contest', 'case'))) {?>
+      <label for="resume" class="">Resume</label>
+      <input name="resume" type="file" class="" required></input>
 
-    <label for="motivation" class="">Motivation</label>
-    <input name="motivation" type="file" class="" ></input>
+      <label for="motivation" class="">Motivation</label>
+      <input name="motivation" type="file" class="" required></input>
 
-    <label for="portfolio" class="">Portfolio</label>
-    <input name="portfolio" type="file" class="" ></input>
+      <label for="portfolio" class="">Portfolio</label>
+      <input name="portfolio" type="file" class=""></input>
+    <?php }?>
 
     <input type="hidden" name="post_ID" value="<?=$post_ID?>">
+    <input type="hidden" name="category" value="<?=$category?>">
     <input type="hidden" name="action" value="event_signup">
 
     <button type="submit" class="button" name="action" value="Submit">Submit</button>

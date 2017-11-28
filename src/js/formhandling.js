@@ -1,7 +1,7 @@
 function formFails(form, data) {
 	// show error message
 	form.addClass('event-signup--failed');
-	data['messages'].forEach(function(message){
+	data.messages.forEach(function(message){
 		var errorMessage = $('<div>');
 		errorMessage.addClass('event-signup__message event-signup__message--failed');
 		errorMessage.text(message);
@@ -12,6 +12,10 @@ function formFails(form, data) {
 
 function formSucceeds(form, data) {
 	// Reveal the message that sending was succesful
+	var successMessage = $('<div>');
+	successMessage.addClass('event-signup__message event-signup__message--success');
+	successMessage.text(data.messages);
+	form.prepend(successMessage);
 	form.addClass('event-signup--success');
 	form.removeClass('event-signup--sending');
 }
