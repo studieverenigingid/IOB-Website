@@ -1,6 +1,6 @@
 <?php
 $response = array();
-$error;
+$errors = array();
 
 $field_key = 'field_5a1181b250f6d';
 $post_ID = $_POST['post_ID'];
@@ -13,8 +13,17 @@ $resume = $_POST['resume'];
 $motivation = $_POST['motivation'];
 $portfolio = $_POST['portfolio'];
 
+if (empty($first_name)) {
+	$errors[] = 'Your first name field can not be empty';
+}
+if (empty($last_name)){
+	$errors[] = 'Your last name field can not be empty';
+}
+if (empty($email)){
+	$errors[] = 'Your email field can not be empty';
+}
 if (empty($phone_number)){
-	$error .= 'Phone number field should not be empty';
+	$errors[] = 'Your phone number field can not be empty';
 }
 
 $new_signup_row = array(
@@ -27,19 +36,19 @@ $new_signup_row = array(
 	'field_5a1183e050f74' => $portfolio //portfolio
 );
 
-if (isset($error)) {
+if (isset($errors)) {
 	$response['success'] = false;
-	$response['message'] = $error;
+	$response['messages'] = $errors;
 } else {
 	$update = add_row($field_key, $new_signup_row, $post_ID);
 
 	// Check if the update was successful
 	if ($update === false) {
 		$response['success'] = false;
-		$response['message'] = 'Something went wrong. Error: '.$update;
+		$response['messages'] = 'Something went wrong. Error: '.$update;
 	} else {
 		$response['success'] = true;
-		$response['message'] = 'Signup received!';
+		$response['messages'] = 'Signup received!';
 	}
 }
 

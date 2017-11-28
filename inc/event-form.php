@@ -18,7 +18,7 @@
     <input name="email" type="email" class="" required></input>
 
     <label for="phone_number" class="">Phone Number</label>
-    <input name="phone_number" type="tel" class=""></input>
+    <input name="phone_number" type="tel" class="" required></input>
 
     <label for="resume" class="">Resume</label>
     <input name="resume" type="file" class="" ></input>

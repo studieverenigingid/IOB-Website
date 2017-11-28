@@ -1,30 +1,50 @@
+function formFails(form, data) {
+	// show error message
+	form.addClass('event-signup--failed');
+	data['messages'].forEach(function(message){
+		var errorMessage = $('<div>');
+		errorMessage.addClass('event-signup__message event-signup__message--failed');
+		errorMessage.text(message);
+		form.prepend(errorMessage);
+	});
+	form.removeClass('event-signup--sending');
+}
+
+function formSucceeds(form, data) {
+	// Reveal the message that sending was succesful
+	form.addClass('event-signup--success');
+	form.removeClass('event-signup--sending');
+}
+
 function formhandling() {
-
-	function formFail(formData) {
-		console.log(formData.message);
-	}
-
-	function formDone(formData) {
-		console.log(formData.message);
-	}
 
 	$(document).on('submit' , 'form.event-signup', function(e) {
 
 		e.preventDefault();
 
-		var formData = new FormData($(this)[0]);
+		var form = $(this);
+		var data = new FormData(form[0]);
 
+		form.addClass('event-signup--sending');
+
+		// send the request to the server
 		$.ajax({
 			url: wpjs_object.ajaxurl,
 			type: 'POST',
 			dataType: 'JSON',
-			data: formData,
+			data: data,
 			processData: false,
-			contentType: false
-		}).done(
-			formDone(formData)
-		).fail(
-			formFail(formData)
-		);
+			contentType: false,
+			success: function(data) {
+				if (data['success'] === false) {
+					formFails(form, data);
+				} else {
+					formSucceeds(form, data);
+				}
+			},
+			error: function(data) {
+				formFails(form, data);
+			}
+		});
 	})
 }
