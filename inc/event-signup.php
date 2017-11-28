@@ -4,6 +4,7 @@ $errors = array();
 
 $field_key = 'field_5a1181b250f6d';
 $post_ID = $_POST['post_ID'];
+$unique_ID = $_POST['unique_ID'];
 $category = $_POST['category'];
 
 $first_name = $_POST['first_name'];
@@ -42,7 +43,8 @@ $new_signup_row = array(
 	'field_5a11831f50f71' => $phone_number, //phone number
 	'field_5a11834e50f72' => $resume, //resume
 	'field_5a1183a250f73' => $motivation, //motivation
-	'field_5a1183e050f74' => $portfolio //portfolio
+	'field_5a1183e050f74' => $portfolio, //portfolio
+	'field_5a1d7c37cfcc0' => $unique_ID //unique identifier to allow sign-up deletion
 );
 
 if (!empty($errors)) {
@@ -51,13 +53,15 @@ if (!empty($errors)) {
 } else {
 	$update = add_row($field_key, $new_signup_row, $post_ID);
 
+	error_log($unique_ID);
+
 	// Check if the update was successful
 	if ($update === false) {
 		$response['success'] = false;
 		$response['messages'] = 'Something went wrong. Error: '.$update;
 	} else {
 		$response['success'] = true;
-		$response['messages'] = 'Signup received!';
+		$response['messages'] = 'Signup received! with unique ID: '.$unique_ID;
 	}
 }
 

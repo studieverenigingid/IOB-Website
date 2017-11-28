@@ -20,6 +20,7 @@
 				$start_time = $start->format('H:i');
 				$end_time   = $end->format('H:i');
 				$location_name = get_field('location_name');
+				$categories = get_the_category_list(' ');
 			?>
 
 			<div class="event--single__meta">
@@ -30,8 +31,12 @@
 					} else {
 						echo $end_time;
 					}
-					echo ($location_name) ? ' @ ' . $location_name : '';
+					echo ($location_name) ? ' @ ' . $location_name : ' ';
 				?>
+			</div>
+
+			<div class="event--single__categories">
+				<?=$categories;?>
 			</div>
 
 			<?php if ( has_post_thumbnail() ) : ?>

@@ -6,7 +6,10 @@
   if($participant_limit && $count < $max_invited_participants):?>
 
   <form action="#" class="event-signup">
-    <?php $post_ID = get_the_ID(); ?>
+    <?php
+      $post_ID = get_the_ID();
+      $unique_ID = uniqid();
+    ?>
 
     <label for="first_name" class="">First Name</label>
     <input name="first_name" type="text" class="" required></input>
@@ -32,6 +35,7 @@
     <?php }?>
 
     <input type="hidden" name="post_ID" value="<?=$post_ID?>">
+    <input type="hidden" name="unique_ID" value="<?=$unique_ID?>">
     <input type="hidden" name="category" value="<?=$category?>">
     <input type="hidden" name="action" value="event_signup">
 
