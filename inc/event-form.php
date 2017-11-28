@@ -20,7 +20,7 @@
     <label for="phone_number" class="">Phone Number</label>
     <input name="phone_number" type="tel" class="" required></input>
 
-    <?php if (in_category(array('speeddates', 'contest', 'case'))) {?>
+    <?php if (in_category(array('speeddates', 'case'))) {?>
       <label for="resume" class="">Resume</label>
       <input name="resume" type="file" class="" required></input>
 
