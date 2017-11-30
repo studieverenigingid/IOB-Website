@@ -54,10 +54,12 @@
       .company--small__link{color:<?= get_theme_mod('accent--secondary_color'); ?>}
       .event--archive__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
       .event--single__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
+      .event--single__categories a{background:<?= get_theme_mod('accent--secondary_color'); ?>; }
+      .event--single__categories a:hover{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
       .fair__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
       .section--hero__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
 
-      .button:hover{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
+      .button:hover, .button:focus{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 
       /* Reset Overruled Styles */
       .button--insta{background:#e1306c}

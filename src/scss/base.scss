@@ -123,6 +123,26 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 		background-repeat: repeat-x;
 	}
 
+
+
+
+
+/*-------------------------------------*\
+	Animations
+\*-------------------------------------*/
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
 /*-------------------------------------*\
 	Reset
 \*-------------------------------------*/
@@ -270,12 +290,18 @@ blockquote {
 		}
 	}
 
+	&--loading, &--success {
+		display: none;
+		font-family: fontawesome;
+	}
+
 	@each $socialnetwork, $color in $social {
 		&--#{$socialnetwork} {
 			@include button-background($color);
 		}
 	}
 }
+
 
 
 

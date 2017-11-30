@@ -38,7 +38,11 @@
     <input type="hidden" name="category" value="<?=$category?>">
     <input type="hidden" name="action" value="event_signup">
 
-    <button type="submit" class="button" name="action" value="Submit">Submit</button>
+    <button type="submit" class="button" name="action" value="Submit">
+      Submit
+      <span class="button--loading">&#xf1ce;</span>
+      <span class="button--success">&#xf00c;</span>
+    </button>
   </form>
 
 <?php
