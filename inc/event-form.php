@@ -35,7 +35,6 @@
     <?php }?>
 
     <input type="hidden" name="post_ID" value="<?=$post_ID?>">
-    <input type="hidden" name="unique_ID" value="<?=$unique_ID?>">
     <input type="hidden" name="category" value="<?=$category?>">
     <input type="hidden" name="action" value="event_signup">
 

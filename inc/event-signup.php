@@ -4,7 +4,7 @@ $errors = array();
 
 $field_key = 'field_5a1181b250f6d';
 $post_ID = $_POST['post_ID'];
-$unique_ID = $_POST['unique_ID'];
+$unique_ID = bin2hex(random_bytes(8));
 $category = $_POST['category'];
 
 $first_name = $_POST['first_name'];
