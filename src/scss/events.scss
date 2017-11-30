@@ -193,3 +193,33 @@
 		display: block;
 	}
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Unsubscribe from event page styles
+\*-------------------------------------*/
+.unsubscribe {
+	background: $accent;
+	padding: 10% 15%;
+
+	p {
+		color: white;
+	}
+
+	&__url {
+		color: white;
+		text-decoration: none;
+
+		&:hover, &:focus {
+			color: white;
+			text-decoration: underline;
+		}
+	}
+
+	&__title, &__sub-title {
+		color: white;
+	}
+}

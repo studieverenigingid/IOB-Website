@@ -45,6 +45,7 @@
       .fair__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .event--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .section--hero__container > * {background:<?= get_theme_mod('accent_color'); ?>;}
+      .unsubscribe{background:<?= get_theme_mod('accent_color'); ?>;}
 
       /* secondary colors */
       .section__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>;}

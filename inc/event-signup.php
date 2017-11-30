@@ -4,6 +4,7 @@ $errors = array();
 
 $field_key = 'field_5a1181b250f6d';
 $post_ID = $_POST['post_ID'];
+$event_title = get_the_title($post_ID);
 $unique_ID = bin2hex(random_bytes(8));
 $category = $_POST['category'];
 
@@ -52,8 +53,31 @@ if (!empty($errors)) {
 	$response['messages'] = $errors;
 } else {
 	$update = add_row($field_key, $new_signup_row, $post_ID);
+	$unsub_link = home_url()."/unsubscribe/?action=delete&post_ID=".$post_ID."&unique_ID=".$unique_ID;
 
-	error_log($unique_ID);
+	error_log($unsub_link);
+
+	// the message
+	$msg = "<html><body>";
+	$msg .= "Hi ".$first_name.", <br><br>";
+	$msg .= "You were subscribed to ".$event_title."<br>";
+	$msg .= "If you wish to unsubscribe, click <a href='$unsub_link'>here</a>. <br><br>";
+	$msg .= "Kind regards, <br>IDE Business Fair";
+	$msg .= "</body></html>";
+
+	// Content-type header must be set to send HTML email
+	$headers  = 'MIME-Version: 1.0' . "\r\n";
+	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+	// Additional headers
+	$headers .= 'From: IDE Business Fair <iob-svid@tudelft.nl>' . "\r\n";
+	// subject
+	$subject = "Signed up for: ".$event_title;
+
+	// put msg inside wordwrap
+	$msg = wordwrap($msg,70);
+
+	// send email
+	mail($email,$subject,$msg,$headers);
 
 	// Check if the update was successful
 	if ($update === false) {
