@@ -54,7 +54,9 @@
   </form>
 
 <?php
-  else:
-    echo "You don't have to sign up for this event, see you there!";
-  endif;
+  else:?>
+    <div class="event-signup__message event-signup__message--failed">
+      You don't have to sign up for this event, see you there!
+    </div>
+  <?php endif;
 ?>
