@@ -15,19 +15,18 @@
 		if ( $loop->have_posts() ) {
 	?>
 
-		<div class="section">
-			<div class="section__wrapper">
-				<?php while($loop->have_posts()) : $loop->the_post(); ?>
-					<?php include 'inc/company-small.php';?>
-				<?php endwhile;?>
-			</div>
+	<div class="section">
+		<div class="section__wrapper">
+			<?php while($loop->have_posts()) : $loop->the_post(); ?>
+				<?php include 'inc/company-small.php';?>
+			<?php endwhile;?>
 		</div>
+	</div>
 
-		<?php
-			}
-			wp_reset_postdata();
-		?>
-
+	<?php
+		}
+		wp_reset_postdata();
+	?>
 <?php
 	get_footer();
 ?>

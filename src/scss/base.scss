@@ -562,10 +562,7 @@ blockquote {
 			left: 0;
 			right: 0;
 			bottom: 0;
-			margin: 0 auto;
-			width: 960px;
-			max-width: 90%;
-			padding: 2rem 0;
+			padding: 2rem;
 
 			& > * {
 				max-width: 500px;
@@ -600,6 +597,19 @@ blockquote {
 		&__date {
 			font-family: $font--light;
 			display: inline-block;
+		}
+
+		&__kickstart {
+			font-size: 5em;
+			letter-spacing: 5px;
+			line-height: 1.2em;
+			text-transform: uppercase;
+			background: none !important;
+			text-shadow: 6px 6px 0px black;
+
+			&--small {
+				font-family: FuturaBT;
+			}
 		}
 	}
 }

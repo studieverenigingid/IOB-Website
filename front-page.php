@@ -4,7 +4,7 @@
 ?>
 
 	<div class="section section--hero">
-		<div class="section--hero__background" style="background:linear-gradient(transparent 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>');"></div>
+		<div class="section--hero__background" style="background:linear-gradient(rgba(255, 255, 255, .2) 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>');"></div>
 		<div class="section--hero__container">
 			<img class="section--hero__logo" alt="Study association i.d"
 				srcset="<?=$img_folder?>iob-logo.png 1x,
@@ -30,6 +30,9 @@
 					<br /><a href="<?=get_post_type_archive_link('event')?>" class="button button--signup">Sign up! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				<?php }
 			?>
+		</div>
+		<div class="section--hero__container">
+			<h2 class="section--hero__kickstart"><span class="section--hero__kickstart--small">Kickstart</span> Your Career</h2>
 		</div>
 	</div>
 
