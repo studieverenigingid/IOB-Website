@@ -124,3 +124,65 @@
 		}
 	}
 }
+
+
+
+
+
+/*-------------------------------------*\
+	Single company styles
+\*-------------------------------------*/
+
+.company {
+	&--single {
+		&__top {
+			width: 100%;
+			padding: .1rem 0;
+			margin: 0 0 2.5rem;
+			background: $accent;
+			display: flex;
+			flex-flow: row wrap;
+			justify-content: center;
+		}
+
+		&__title {
+			font-size: 1em;
+			text-align: center;
+			color: $background--light;
+			display: inline;
+
+			@media (max-width: $brk--phone) {
+				font-size: 2.6em;
+			}
+		}
+
+		&__meta {
+			color: white;
+			margin: 2rem 0;
+			text-align: center;
+			flex-basis: 100%;
+		}
+
+		&__thumb {
+			flex-basis: 100%;
+		}
+
+		&__img {
+			width: 100%;
+			max-width: 18rem;
+			height: auto;
+			margin: 0 auto;
+			display: block;
+			background: white;
+			padding: 1.2rem;
+			box-shadow: 0 0.1rem 0.4rem rgba(0,0,0,0.2);
+			border-radius: .3rem;
+		}
+
+		&__wrapper {
+			margin: 0 auto;
+			max-width: 768px;
+			padding: 2*$pad $pad;
+		}
+	}
+}

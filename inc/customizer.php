@@ -41,7 +41,7 @@
       .button--white:focus{color:<?= get_theme_mod('accent_color'); ?>;}
       .bies{background:<?= get_theme_mod('accent_color'); ?>;}
       .company--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
-      .event--single__top{background:<?= get_theme_mod('accent_color'); ?>;}
+      .event--single__top, .company--single__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .fair__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .event--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .section--hero__container > * {background:<?= get_theme_mod('accent_color'); ?>;}

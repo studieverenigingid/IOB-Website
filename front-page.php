@@ -4,8 +4,7 @@
 ?>
 
 	<div class="section section--hero">
-		<?php the_post_thumbnail('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>
-		<div class="gradient-pattern"></div>
+		<div class="section--hero__background" style="background:linear-gradient(transparent 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>');"></div>
 		<div class="section--hero__container">
 			<img class="section--hero__logo" alt="Study association i.d"
 				srcset="<?=$img_folder?>iob-logo.png 1x,
@@ -23,6 +22,14 @@
 				<?= $fair_start_month ?> <?= $fair_start_day ?> to <?php if($fair_start_month != $fair_end_month){ echo $fair_end_month; }; ?> <?= $fair_end_day ?> <br>
 				Faculty Hall IDE
 			</h3>
+			<?php
+				$query = new WP_Query(array(
+					'post_type' => 'event'
+				));
+				if( $query->have_posts() ){?>
+					<br /><a href="<?=get_post_type_archive_link('event')?>" class="button button--signup">Sign up! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+				<?php }
+			?>
 		</div>
 	</div>
 

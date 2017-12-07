@@ -24,6 +24,22 @@
 				'append' => '',
 				'maxlength' => 44,
 			),
+			array (
+			'key' => 'field_5a292b9bab18e',
+			'label' => 'company url',
+			'name' => 'company_url',
+			'type' => 'url',
+			'instructions' => 'Set the homepage url for the company',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array (
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+		),
 		),
 		'location' => array (
 			array (
