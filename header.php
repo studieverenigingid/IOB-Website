@@ -7,8 +7,7 @@ global $img_folder;
 
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="theme-color" content="#31307D"><?php /* TODO:
-		replace with realfavicongenerator.net snippet */ ?>
+		<meta name="theme-color" content="<?=get_theme_mod('accent_color');?>">
 
 		<?php
 		if ( ! function_exists( '_wp_render_title_tag' ) ) :
