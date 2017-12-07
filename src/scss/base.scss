@@ -610,6 +610,10 @@ blockquote {
 			&--small {
 				font-family: FuturaBT;
 			}
+
+			@media (max-width: $brk--desktop) {
+				display: none;
+			}
 		}
 	}
 }
