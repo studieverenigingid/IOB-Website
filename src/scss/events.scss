@@ -170,6 +170,23 @@
 	Event sign-up styles
 \*-------------------------------------*/
 .event-signup {
+	&__message {
+		padding: 1.2rem;
+		margin: 1.2rem 0;
+
+		&--failed {
+			color: $hex--warning;
+			background-color: lighten($hex--warning, 47%);
+			border: 1px solid $hex--warning;
+		}
+
+		&--success {
+			color: $hex--success;
+			background-color: lighten($hex--success, 74%);
+			border: 1px solid $hex--success;
+		}
+	}
+
 	label {
 		display: block;
 	}

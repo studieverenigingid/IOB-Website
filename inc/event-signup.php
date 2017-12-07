@@ -61,7 +61,7 @@ if (!empty($errors)) {
 	$msg = "<html><body>";
 	$msg .= "Hi ".$first_name.", <br><br>";
 	$msg .= "You were subscribed to ".$event_title."<br>";
-	$msg .= "If you wish to unsubscribe, click <a href='$unsub_link'>here</a>. <br><br>";
+	$msg .= "If you no longer wish to attend this event, click <a href='$unsub_link'>here</a>. <br><br>";
 	$msg .= "Kind regards, <br>IDE Business Fair";
 	$msg .= "</body></html>";
 
@@ -85,7 +85,7 @@ if (!empty($errors)) {
 		$response['messages'] = 'Something went wrong. Error: '.$update;
 	} else {
 		$response['success'] = true;
-		$response['messages'] = 'Signup received! with unique ID: '.$unique_ID;
+		$response['messages'] = 'Signup received successfully!';
 	}
 }
 

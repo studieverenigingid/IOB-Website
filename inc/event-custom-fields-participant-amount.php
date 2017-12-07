@@ -7,10 +7,10 @@ acf_add_local_field_group(array (
 	'fields' => array (
 		array (
 			'key' => 'field_59e49e1419265',
-			'label' => 'Participant Limit',
+			'label' => 'Sign up required',
 			'name' => 'participant_limit',
 			'type' => 'true_false',
-			'instructions' => 'Check if the participant entries should be limited.',
+			'instructions' => 'Check this if the participants should sign up for this event.',
 			'required' => 0,
 			'conditional_logic' => 0,
 			'wrapper' => array (
@@ -24,7 +24,7 @@ acf_add_local_field_group(array (
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
-		array (
+		/* array (
 			'key' => 'field_59e49e8719266',
 			'label' => 'Desired Participants',
 			'name' => 'desired_participants',
@@ -52,7 +52,7 @@ acf_add_local_field_group(array (
 			'min' => '',
 			'max' => '',
 			'step' => '',
-		),
+		), */
 		array (
 			'key' => 'field_59e5be3109d59',
 			'label' => 'Max Invited Participants',

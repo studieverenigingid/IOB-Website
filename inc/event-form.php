@@ -3,7 +3,15 @@
   $max_invited_participants = get_field('max_invited_participants');
   $participant_limit = get_field('participant_limit');
 
-  if($participant_limit && $count < $max_invited_participants):?>
+  if($participant_limit):
+
+  if($count >= $max_invited_participants){?>
+    <div class="event-signup__message event-signup__message--failed">
+      Unfortunately, this event is full. You'll be able to sign up, but you'll be put on the waiting list.
+    </div>
+  <?php
+    }
+  ?>
 
   <form action="#" class="event-signup">
     <?php
@@ -46,9 +54,7 @@
   </form>
 
 <?php
-  elseif($participant_limit == false):
-    echo "You don't have to sign up for this event, see you there!";
   else:
-    echo "Unfortunately, this event is full. Maximum participant reached.";
+    echo "You don't have to sign up for this event, see you there!";
   endif;
 ?>
