@@ -48,16 +48,16 @@
       .unsubscribe{background:<?= get_theme_mod('accent_color'); ?>;}
 
       /* secondary colors */
-      .section__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>;}
+      .section__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .button{background:<?= get_theme_mod('accent--secondary_color'); ?>}
-      .company--archive__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
+      .company--archive__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .company--small__link{color:<?= get_theme_mod('accent--secondary_color'); ?>}
-      .event--archive__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
-      .event--single__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
+      .event--archive__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
+      .event--single__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .event--single__categories a{background:<?= get_theme_mod('accent--secondary_color'); ?>; }
       .event--single__categories a:hover{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
-      .fair__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
-      .section--hero__title:after{background:<?= get_theme_mod('accent--secondary_color'); ?>}
+      .fair__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
+      .section--hero__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
 
       .button:hover, .button:focus{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 
