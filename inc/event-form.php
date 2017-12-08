@@ -55,7 +55,7 @@
 
 <?php
   else:?>
-    <div class="event-signup__message event-signup__message--failed">
+    <div class="event-signup__message event-signup__message--success">
       You don't have to sign up for this event, see you there!
     </div>
   <?php endif;
