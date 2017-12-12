@@ -10,7 +10,7 @@
 				srcset="<?=$img_folder?>iob-logo.png 1x,
 					<?=$img_folder?>iob-logo@2x.png 2x"
 				src="<?=$img_folder?>iob-logo.png">
-			<h1 class="section--hero__title"><span>Industrial Design Engineering Business Fair</span></h1>
+			<h1 class="section--hero__title"><span><?=bloginfo('title');?></span></h1>
 			<h3 class="section--hero__date">
 				<?php
 					$fair_start_month = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'F');
@@ -32,7 +32,7 @@
 			?>
 		</div>
 		<div class="section--hero__container">
-			<h2 class="section--hero__kickstart"><span class="section--hero__kickstart--small">Kickstart</span> Your Career</h2>
+			<h2 class="section--hero__kickstart"><?=bloginfo('description');?></h2>
 		</div>
 	</div>
 
