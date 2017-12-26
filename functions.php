@@ -6,8 +6,7 @@
 	// Custom Fields
 	include 'inc/front-page-custom-fields.php';
 	include 'inc/event-custom-fields.php';
-	include 'inc/event-custom-fields-participant-amount.php';
-	include 'inc/event-custom-fields-participant-info.php';
+	include 'inc/event-custom-fields-participants.php';
 	include 'inc/company-custom-fields.php';
 	include 'inc/fair-custom-fields.php';
 	include 'inc/dynamic-darken.php';

@@ -16,34 +16,31 @@
   <form action="#" class="event-signup">
     <?php
       $post_ID = get_the_ID();
+      $post_title = get_the_title();
       $unique_ID = uniqid();
+
+      $req_fields = array(
+        'first_name' => array('First Name','text','Required'),
+        'last_name' => array('Last Name','text','Required'),
+        'email' => array('Email','email','Required'),
+        'phone_number' => array('Phone Number','tel','Required'),
+        'resume' => array('Resumé','file', get_field('resume')),
+        'motivation' => array('Motivation','file', get_field('motivation')),
+        'portfolio' => array('Portfolio','file', get_field('portfolio')),
+      );
     ?>
 
-    <label for="first_name" class="">First Name</label>
-    <input name="first_name" type="text" class="" required></input>
-
-    <label for="last_name" class="">Last Name</label>
-    <input name="last_name" type="text" class="" required></input>
-
-    <label for="email" class="">Email address</label>
-    <input name="email" type="email" class="" required></input>
-
-    <label for="phone_number" class="">Phone Number</label>
-    <input name="phone_number" type="tel" class="" required></input>
-
-    <?php if (in_category(array('speeddates', 'case'))) {?>
-      <label for="resume" class="">Resume</label>
-      <input name="resume" type="file" class="" required></input>
-
-      <label for="motivation" class="">Motivation</label>
-      <input name="motivation" type="file" class="" required></input>
-
-      <label for="portfolio" class="">Portfolio</label>
-      <input name="portfolio" type="file" class=""></input>
-    <?php }?>
+    <?php foreach ($req_fields as $field => $value) {
+      if ($value[2] != 'No') {?>
+        <label for="<?=$value[0]?>"><?=$value[0]?> <?php if($value[2] == 'required'){echo '*';} ?></label>
+        <?php if($value[2] != 'Required'){?><p><?=$value[0]?> is an optional field</p><?php } ?>
+        <input name="<?=$field?>" type="<?=$value[1]?>" <?php if($value[2] == 'Required'){echo '';} ?>></input>
+      <?php }
+    } ?>
 
     <input type="hidden" name="post_ID" value="<?=$post_ID?>">
     <input type="hidden" name="category" value="<?=$category?>">
+    <input type="hidden" name="req_fields" value="<?=$req_fields?>">
     <input type="hidden" name="action" value="event_signup">
 
     <button type="submit" class="button" name="action" value="Submit">

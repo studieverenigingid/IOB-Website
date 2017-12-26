@@ -7,7 +7,11 @@ function formFails(form, data) {
 		errorMessage.text(message);
 		form.prepend(errorMessage);
 	});
+	fbq('track', 'CompleteRegistration', {
+		status: 'failed'
+	});
 	form.removeClass('event-signup--sending');
+
 }
 
 function formSucceeds(form, data) {
@@ -18,6 +22,9 @@ function formSucceeds(form, data) {
 	form.prepend(successMessage);
 	form.addClass('event-signup--success');
 	form.removeClass('event-signup--sending');
+	fbq('track', 'CompleteRegistration', {
+		status: 'success'
+	});
 }
 
 function formhandling() {

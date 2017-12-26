@@ -7,6 +7,7 @@ $post_ID = $_POST['post_ID'];
 $event_title = get_the_title($post_ID);
 $unique_ID = bin2hex(random_bytes(8));
 $category = $_POST['category'];
+$req_fields = $_POST['req_fields'];
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
@@ -16,24 +17,9 @@ $resume = $_POST['resume'];
 $motivation = $_POST['motivation'];
 $portfolio = $_POST['portfolio'];
 
-if (empty($first_name)) {
-	$errors[] = 'Your first name field can not be empty';
-}
-if (empty($last_name)){
-	$errors[] = 'Your last name field can not be empty';
-}
-if (empty($email)){
-	$errors[] = 'Your email field can not be empty';
-}
-if (empty($phone_number)){
-	$errors[] = 'Your phone number field can not be empty';
-}
-if ($category == 'speeddates' || $category == 'case') {
-	if (empty($motivation)) {
-		$errors[] = 'Your motivation is mandatory';
-	}
-	if (empty($resume)) {
-		$errors[] = 'Your resume is mandatory';
+foreach ($req_fields as $field => $value) {
+	if ($value[2] == 'Required' && empty($_POST[$field])) {
+		$errors[] = 'Your '.$value[0].' field can not be empty';
 	}
 }
 
