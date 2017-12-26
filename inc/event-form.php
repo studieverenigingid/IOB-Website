@@ -32,7 +32,7 @@
 
     <?php foreach ($req_fields as $field => $value) {
       if ($value[2] != 'No') {?>
-        <label for="<?=$value[0]?>"><?=$value[0]?> <?php if($value[2] == 'required'){echo '*';} ?></label>
+        <label for="<?=$value[0]?>"><?=$value[0]?> <?php if($value[2] == 'Required'){echo '*';} ?></label>
         <?php if($value[2] != 'Required'){?><p><?=$value[0]?> is an optional field</p><?php } ?>
         <input name="<?=$field?>" type="<?=$value[1]?>" <?php if($value[2] == 'Required'){echo '';} ?>></input>
       <?php }
@@ -40,7 +40,6 @@
 
     <input type="hidden" name="post_ID" value="<?=$post_ID?>">
     <input type="hidden" name="category" value="<?=$category?>">
-    <input type="hidden" name="req_fields" value="<?=$req_fields?>">
     <input type="hidden" name="action" value="event_signup">
 
     <button type="submit" class="button" name="action" value="Submit">

@@ -7,7 +7,6 @@ $post_ID = $_POST['post_ID'];
 $event_title = get_the_title($post_ID);
 $unique_ID = bin2hex(random_bytes(8));
 $category = $_POST['category'];
-$req_fields = $_POST['req_fields'];
 
 $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
@@ -17,14 +16,52 @@ $resume = $_POST['resume'];
 $motivation = $_POST['motivation'];
 $portfolio = $_POST['portfolio'];
 
-foreach ($req_fields as $field => $value) {
-	if ($value[2] == 'Required' && empty($_POST[$field])) {
-		$errors[] = 'Your '.$value[0].' field can not be empty';
+$fields = array(
+	'first_name' => array(
+		'pretty_name' => 'First Name',
+		'value' => $first_name,
+		'required' => 'Required'
+	),
+	'last_name' => array(
+		'pretty_name' => 'Last Name',
+		'value' => $last_name,
+		'required' => 'Required'
+	),
+	'email' => array(
+		'pretty_name' => 'Email',
+		'value' => $email,
+		'required' => 'Required'
+	),
+	'phone_number' => array(
+		'pretty_name' => 'Phone Number',
+		'value' => $phone_number,
+		'required' => 'Required'
+	),
+	'resume' => array(
+		'pretty_name' => 'Resumé',
+		'value' => $resume,
+		'required' =>  get_field('resume', $post_ID)
+	),
+	'motivation' => array(
+		'pretty_name' => 'Motivation',
+		'value' => $motivation,
+		'required' =>  get_field('motivation', $post_ID)
+	),
+	'portfolio' => array(
+		'pretty_name' => 'Portfolio',
+		'value' => $portfolio,
+		'required' =>  get_field('portfolio', $post_ID)
+	),
+);
+
+foreach ($fields as $field => $value) {
+	if ($value['required'] == 'Required' && empty($value['value'])) {
+		$errors[] = 'Your '.$value['pretty_name'].' field can not be empty';
 	}
 }
 
 $new_signup_row = array(
-	'field_5a1182a650f6e'  => $first_name, //first name
+	'field_5a1182a650f6e' => $first_name, //first name
 	'field_5a1182d050f6f' => $last_name, //last name
 	'field_5a1182e150f70' => $email, //email
 	'field_5a11831f50f71' => $phone_number, //phone number
