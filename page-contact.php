@@ -23,13 +23,13 @@
 	<!-- COMMITTEE -->
 	<!-- ********* -->
 
-	<?php if(has_post_thumbnail() || get_field('committee_info')) {?>
+	<?php if(get_field('committee_image') || get_field('committee_info')) {?>
 		<div class="section__title__wrapper">
 			<h2 class="section__title"><span>The Committee</span></h2>
 		</div>
 		<div class="section">
 			<div class="section__wrapper">
-					<?= the_post_thumbnail('large'); ?>
+					<img src="<?= get_field('committee_image')?>">
 					<?= get_field('committee_info'); ?>
 			</div>
 		</div>
