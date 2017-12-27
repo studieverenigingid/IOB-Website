@@ -18,6 +18,10 @@
       $post_ID = get_the_ID();
       $post_title = get_the_title();
       $unique_ID = uniqid();
+      $categories = get_the_category();
+      if ( ! empty( $categories ) ) {
+        $category = $categories[0]->name;
+      }
 
       $req_fields = array(
         'first_name' => array('First Name','text','Required'),
@@ -34,7 +38,7 @@
       if ($value[2] != 'No') {?>
         <label for="<?=$value[0]?>"><?=$value[0]?> <?php if($value[2] == 'Required'){echo '*';} ?></label>
         <?php if($value[2] != 'Required'){?><p><?=$value[0]?> is an optional field</p><?php } ?>
-        <input name="<?=$field?>" type="<?=$value[1]?>" <?php if($value[2] == 'Required'){echo '';} ?>></input>
+        <input name="<?=$field?>" type="<?=$value[1]?>" <?php if($value[2] == 'Required'){echo 'required';} ?>></input>
       <?php }
     } ?>
 

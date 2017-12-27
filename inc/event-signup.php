@@ -12,9 +12,40 @@ $first_name = $_POST['first_name'];
 $last_name = $_POST['last_name'];
 $email = $_POST['email'];
 $phone_number = $_POST['phone_number'];
-$resume = $_POST['resume'];
-$motivation = $_POST['motivation'];
-$portfolio = $_POST['portfolio'];
+
+/* upload to wordpress media */
+$upload_overrides = array( 'test_form' => false );
+
+foreach ($_FILES as $filedescr => $file) {
+	$filename = wp_handle_upload( $file, $upload_overrides )['file'];
+	if ( $filename && ! isset( $filename['error'] ) ) {
+		$filetype = wp_check_filetype( basename( $filename ), null );
+		$wp_upload_dir = wp_upload_dir();
+		$attachment = array(
+			'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
+			'post_mime_type' => $filetype['type'],
+			'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
+			'post_content'   => '',
+			'post_status'    => 'inherit'
+		);
+
+		$files[$filedescr] = wp_insert_attachment( $attachment, $filename, $post_ID );
+
+		if($files[$filedescr] == 0) {
+			$errors[] = "There was an error moving your file, please send us an e-mail.";
+		}
+
+	} else {
+	    $errors[] = $filename['error'];
+	}
+}
+
+$resume = $files['resume'];
+$motivation = $files['motivation'];
+$portfolio = $files['portfolio'];
+
+
+// array that states whether fields are optional or required
 
 $fields = array(
 	'first_name' => array(
@@ -77,8 +108,6 @@ if (!empty($errors)) {
 } else {
 	$update = add_row($field_key, $new_signup_row, $post_ID);
 	$unsub_link = home_url()."/unsubscribe/?action=delete&post_ID=".$post_ID."&unique_ID=".$unique_ID;
-
-	error_log($unsub_link);
 
 	// the message
 	$msg = "<html><body>";
