@@ -17,32 +17,33 @@ $phone_number = $_POST['phone_number'];
 $upload_overrides = array( 'test_form' => false );
 
 foreach ($_FILES as $filedescr => $file) {
-	$filename = wp_handle_upload( $file, $upload_overrides )['file'];
-	if ( $filename && ! isset( $filename['error'] ) ) {
-		$filetype = wp_check_filetype( basename( $filename ), null );
-		$wp_upload_dir = wp_upload_dir();
-		$attachment = array(
-			'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
-			'post_mime_type' => $filetype['type'],
-			'post_title'     => $filedescr."_".$first_name."-".$last_name."_".preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
-			'post_content'   => '',
-			'post_status'    => 'inherit'
-		);
-
-		$files[$filedescr] = wp_insert_attachment( $attachment, $filename, $post_ID );
-
-		if($files[$filedescr] == 0) {
-			$errors[] = "There was an error moving your file, please send us an e-mail.";
-		}
+	if ($file['error'] == 4){
 
 	} else {
-	    $errors[] = $filename['error'];
+		$filename = wp_handle_upload( $file, $upload_overrides )['file'];
+
+		if ( $filename && ! isset( $filename['error'] ) ) {
+			$filetype = wp_check_filetype( basename( $filename ), null );
+			$wp_upload_dir = wp_upload_dir();
+			$attachment = array(
+				'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
+				'post_mime_type' => $filetype['type'],
+				'post_title'     => $filedescr."_".$first_name."-".$last_name."_".preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
+				'post_content'   => '',
+				'post_status'    => 'inherit'
+			);
+
+			$files[$filedescr] = wp_insert_attachment( $attachment, $filename, $post_ID );
+
+			if($files[$filedescr] == 0) {
+				$errors[] = "There was an error moving your file, please send us an e-mail.";
+			}
+
+		} else {
+		    $errors[] = $filename['error'];
+		}
 	}
 }
-
-$resume = $files['resume'];
-$motivation = $files['motivation'];
-$portfolio = $files['portfolio'];
 
 
 // array that states whether fields are optional or required
@@ -70,17 +71,17 @@ $fields = array(
 	),
 	'resume' => array(
 		'pretty_name' => 'Resumé',
-		'value' => $resume,
+		'value' => $files['resume'],
 		'required' =>  get_field('resume', $post_ID)
 	),
 	'motivation' => array(
 		'pretty_name' => 'Motivation',
-		'value' => $motivation,
+		'value' => $files['motivation'],
 		'required' =>  get_field('motivation', $post_ID)
 	),
 	'portfolio' => array(
 		'pretty_name' => 'Portfolio',
-		'value' => $portfolio,
+		'value' => $files['portfolio'],
 		'required' =>  get_field('portfolio', $post_ID)
 	),
 );
@@ -96,9 +97,9 @@ $new_signup_row = array(
 	'field_5a1182d050f6f' => $last_name, //last name
 	'field_5a1182e150f70' => $email, //email
 	'field_5a11831f50f71' => $phone_number, //phone number
-	'field_5a11834e50f72' => $resume, //resume
-	'field_5a1183a250f73' => $motivation, //motivation
-	'field_5a1183e050f74' => $portfolio, //portfolio
+	'field_5a11834e50f72' => $files['resume'], //resume
+	'field_5a1183a250f73' => $files['motivation'], //motivation
+	'field_5a1183e050f74' => $files['portfolio'], //portfolio
 	'field_5a1d7c37cfcc0' => $unique_ID //unique identifier to allow sign-up deletion
 );
 
