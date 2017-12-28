@@ -24,7 +24,7 @@ foreach ($_FILES as $filedescr => $file) {
 		$attachment = array(
 			'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ),
 			'post_mime_type' => $filetype['type'],
-			'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
+			'post_title'     => $filedescr."_".$first_name."-".$last_name."_".preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
 			'post_content'   => '',
 			'post_status'    => 'inherit'
 		);
