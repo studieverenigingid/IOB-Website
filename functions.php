@@ -29,6 +29,7 @@
 	add_action( 'wp_head', 'iob_customize_css');
 	add_action( 'wp_ajax_nopriv_event_signup', 'event_signup');
 	add_action( 'wp_ajax_event_signup', 'event_signup');
+	add_action( 'wp_ajax_show_participants', 'show_participants');
 
 	function custom_theme_setup() {
 		add_theme_support( 'post-thumbnails' ); // Allow posts to have thumbnails
@@ -60,6 +61,11 @@
 
 	function event_signup() {
 		include 'inc/event-signup.php';
+		wp_die();
+	}
+
+	function show_participants() {
+		include 'inc/show-participants.php';
 		wp_die();
 	}
 

@@ -5,4 +5,5 @@ function onDocReady () {
 	menuToggler();
 	menuSticky();
 	formhandling();
+	show_participants();
 }
