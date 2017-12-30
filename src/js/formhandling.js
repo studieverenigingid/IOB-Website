@@ -4,7 +4,7 @@ function formFails(form, data) {
 	data.messages.forEach(function(message){
 		var errorMessage = $('<div>');
 		errorMessage.addClass('event-signup__message event-signup__message--failed');
-		errorMessage.text(message);
+		errorMessage.html(message);
 		form.prepend(errorMessage);
 	});
 	fbq('track', 'CompleteRegistration', {
@@ -18,7 +18,7 @@ function formSucceeds(form, data) {
 	// Reveal the message that sending was succesful
 	var successMessage = $('<div>');
 	successMessage.addClass('event-signup__message event-signup__message--success');
-	successMessage.text(data.messages);
+	successMessage.html(data.messages);
 	form.prepend(successMessage);
 	form.addClass('event-signup--success');
 	form.removeClass('event-signup--sending');

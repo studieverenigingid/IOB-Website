@@ -92,6 +92,18 @@ foreach ($fields as $field => $value) {
 	}
 }
 
+// check e-mail for duplicate
+$participant_emails = array();
+if( have_rows('participant_list', $post_ID) ):
+	while( have_rows('participant_list', $post_ID )) : the_row();
+		$participant_emails[] = get_sub_field('email');
+	endwhile;
+endif;
+
+if (in_array($email, $participant_emails)){
+	$errors[] = 'You have already signed up for this event, check your e-mail! If this is not the case, send us an <a href="mailto:iob-svid@tudelft.nl">e-mail</a>, we\'ll get you sorted.';
+}
+
 $new_signup_row = array(
 	'field_5a1182a650f6e' => $first_name, //first name
 	'field_5a1182d050f6f' => $last_name, //last name
