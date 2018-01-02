@@ -30,12 +30,17 @@
 								<?=get_the_title();?>
 							</h2>
 							<?php
+
+							$results = array();
+
 							while( have_rows('participant_list') ): the_row();
 								$results[] = get_row();
 							endwhile;
 
-							if(!empty(array_search($unique_ID,array_column($results, 'field_5a1d7c37cfcc0')))){
-								$row = array_search($unique_ID,array_column($results, 'field_5a1d7c37cfcc0'))+1;?>
+							$unique_ID_found = array_search($unique_ID,array_column($results, 'field_5a1d7c37cfcc0'));
+
+							if($unique_ID_found !== false){
+								$row = $unique_ID_found+1;?>
 								<p>Should <?=$action?> row <?=$row?> from <?=get_the_title()?>.</p>
 								<?php delete_row( 'participant_list', $row, $post_ID );
 							} else { ?>
