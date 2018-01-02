@@ -32,7 +32,10 @@ function create_event_post_type() {
 		'menu_icon'   => 'dashicons-schedule',
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'rewrite' => true,
+		'rewrite' => array(
+			'rewrite' => 'rewrite',
+			'with_front' => false
+		 ),
 		'supports' => array( 'editor', 'revisions', 'thumbnail', 'title' ),
 
     'taxonomies' => array( 'category' )

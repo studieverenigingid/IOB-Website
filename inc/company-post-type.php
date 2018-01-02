@@ -32,7 +32,10 @@ function create_company_post_type() {
 		'menu_icon'   => 'dashicons-building',
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'rewrite' => true,
+		'rewrite' => array(
+			'rewrite' => 'company',
+			'with_front' => false
+		 ),
 		'supports' => array( 'editor', 'revisions', 'thumbnail', 'title' )
 	);
 	register_post_type( 'company' , $args );
