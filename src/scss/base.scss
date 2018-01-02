@@ -26,13 +26,17 @@
 
 @font-face {
 	font-family: FuturaStd;
-	src: url(../fonts/FuturaStd-Heavy.otf);
+	src: 	url(../fonts/FuturaStd-Heavy.otf) format('opentype'),
+				url(../fonts/FuturaStd-Heavy.ttf) format('opentype'),
+				url(../fonts/FuturaStd-Heavy.woff) format('woff');
 	font-weight: 700;
 }
 
 @font-face {
 	font-family: FuturaBT;
-	src: url(../fonts/FuturaBT-Light.otf);
+	src:	url(../fonts/FuturaBT-Light.otf) format('opentype'),
+				url(../fonts/FuturaBT-Light.ttf) format('opentype'),
+				url(../fonts/FuturaBT-Light.woff) format('woff');
 	font-weight: 300;
 }
 
