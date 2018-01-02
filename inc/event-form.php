@@ -23,6 +23,7 @@
         $post_ID = get_the_ID();
         $post_title = get_the_title();
         $unique_ID = uniqid();
+        $category = "";
         $categories = get_the_category();
         if ( ! empty( $categories ) ) {
           $category = $categories[0]->name;

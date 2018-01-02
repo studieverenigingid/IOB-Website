@@ -44,7 +44,7 @@
 	function remove_posts_menu() {
 		remove_menu_page('edit.php');
 	}
-	add_action('admin_init', 'remove_posts_menu');
+	add_action('admin_menu', 'remove_posts_menu');
 
 	/* Replace Wordpress’s version of jQuery with Google API version, since most
 	browsers will have it in their cache. */
