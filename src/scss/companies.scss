@@ -144,7 +144,7 @@
 	&--single {
 		&__top {
 			width: 100%;
-			padding: .1rem 0;
+			padding: 2rem 0;
 			margin: 0 0 2.5rem;
 			background: $accent;
 			display: flex;
@@ -168,6 +168,10 @@
 			margin: 2rem 0;
 			text-align: center;
 			flex-basis: 100%;
+		}
+
+		&__url {
+			text-align: center;
 		}
 
 		&__thumb {

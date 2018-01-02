@@ -4,7 +4,7 @@
 ?>
 
 	<main class="company--single__top">
-		<div class="section__wrapper">
+		<div class="company--single__top__wrapper">
 			<?php if ( has_post_thumbnail() ) : ?>
 				<div class="company--single__thumb">
 					<?php
@@ -23,10 +23,12 @@
 			<?php
 					$company_url = get_field('company_url');
 					if ( $company_url ): ?>
-					<a target="_blank" class="button"
-						href="<?php echo $company_url ?>">
-						<i class="fa fa-link"></i> Company Website
-					</a>
+					<div class="company--single__url">
+						<a target="_blank" class="button"
+							href="<?php echo $company_url ?>">
+							<i class="fa fa-link"></i> Company Website
+						</a>
+					</div>
 				<?php endif; ?>
 		</div>
 	</main>

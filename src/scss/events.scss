@@ -93,11 +93,16 @@
 		&__top {
 			width: 100%;
 			padding: .1rem 0;
-			margin: 0 0 2.5rem;
+			margin-bottom: 3rem;
 			background: $accent;
 			display: flex;
 			flex-flow: row wrap;
 			justify-content: center;
+
+			&__wrapper {
+				max-width: 960px;
+				margin: 0 0 2.5rem;
+			}
 		}
 
 		&__title {

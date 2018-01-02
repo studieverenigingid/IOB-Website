@@ -4,7 +4,7 @@
 ?>
 
 	<main class="event--single__top">
-		<div class="section__wrapper">
+		<div class="event--single__top__wrapper">
 			<h1 class="event--single__title"><span><?= the_title(); ?></span></h1>
 
 			<?php
