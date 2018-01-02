@@ -26,10 +26,10 @@
 		justify-content: flex-start;
 
 		&__thumb {
+			position: relative;
+			box-sizing: content-box;
 			background: white;
 			width: 100%;
-			display: flex;
-			align-items: center;
 
 			&:before {
 				content: "";
@@ -40,8 +40,15 @@
 
 		img {
 			padding: $pad;
-			width: 100%;
-			height: auto;
+			max-width: 100%;
+			max-height: 100%;
+
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			margin: auto;
 		}
 
 		@media (max-width: $brk--phone) {
