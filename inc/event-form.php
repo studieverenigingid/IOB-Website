@@ -1,7 +1,10 @@
 <?php
   if (time() < strtotime(get_field('end_datetime'))) {
 
-    $count = count( get_field('participant_list') );
+    $count = 0;
+    if(have_rows('participant_list')){
+      $count = count(get_field('participant_list') );
+    }
     $max_invited_participants = get_field('max_invited_participants');
     $participant_limit = get_field('participant_limit');
 
