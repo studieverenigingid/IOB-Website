@@ -53,7 +53,11 @@
 	</main>
 
 	<div class="event--single__wrapper">
-		<?php the_content(); ?>
+		<?php
+			if(!empty(get_field('facebook_url'))){?>
+				<a class="button" href="<?= get_field('facebook_url')?>" target="_blank">Facebook event</a>
+			<?php }
+		 	the_content(); ?>
 
 		<h2>Sign-up</h2>
 		<?php
