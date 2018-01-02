@@ -339,7 +339,7 @@ acf_add_local_field_group(array (
 					'key' => 'field_5a1d7c37cfcc0',
 					'label' => 'Unique ID',
 					'name' => 'unique_ID',
-					'type' => 'password',
+					'type' => 'text',
 					'instructions' => 'Unique ID used for deleting an event sign-up (do not edit!)',
 					'required' => 0,
 					'conditional_logic' => array (
@@ -371,7 +371,15 @@ acf_add_local_field_group(array (
 			'type' => 'true_false',
 			'instructions' => 'Shouldn\'t be necessary. Developer function!',
 			'required' => 0,
-			'conditional_logic' => 0,
+			'conditional_logic' => array (
+				array (
+					array (
+						'field' => 'field_59e49e1419265',
+						'operator' => '==',
+						'value' => '1',
+					),
+				),
+			),
 			'wrapper' => array (
 				'width' => '',
 				'class' => '',

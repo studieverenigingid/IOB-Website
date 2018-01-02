@@ -122,6 +122,8 @@ if (!empty($errors)) {
 	$update = add_row($field_key, $new_signup_row, $post_ID);
 	$unsub_link = home_url()."/unsubscribe/?action=delete&post_ID=".$post_ID."&unique_ID=".$unique_ID;
 
+	error_log($unsub_link);
+
 	// the message
 	$msg = "<html><body>";
 	$msg .= "Hi ".$first_name.", <br><br>";
