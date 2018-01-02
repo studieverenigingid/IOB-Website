@@ -21,6 +21,7 @@
 	&--small {
 		flex-basis: 33.33%;
 		flex-grow: 1;
+		max-width: 640px;
 		padding: 0 $pad 2*$pad;
 
 		img {
@@ -40,14 +41,6 @@
 		@media (max-width: $brk--real-phone) {
 			flex-basis: 100%;
 			padding: 0 $pad $pad;
-		}
-	}
-}
-
-.section {
-	&__wrapper {
-		&--events {
-			justify-content: space-between;
 		}
 	}
 }
