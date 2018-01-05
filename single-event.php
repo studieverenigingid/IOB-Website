@@ -54,7 +54,7 @@
 	<div class="event--single__wrapper">
 		<?php
 			if(!empty(get_field('facebook_url'))){?>
-				<a class="button" href="<?= get_field('facebook_url')?>" target="_blank">Facebook event</a>
+				<a class="button button--facebook" href="<?= get_field('facebook_url')?>" target="_blank"><i class="fa fa-facebook"></i> Event Page</a>
 			<?php }
 		 	the_content(); ?>
 

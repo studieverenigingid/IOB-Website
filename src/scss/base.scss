@@ -308,7 +308,7 @@ blockquote {
 .bies {
 	width: 100%;
 	background: $accent;
-	padding: 0 0 1px;
+	overflow: hidden;
 	position: relative;
 
 	&__image {
