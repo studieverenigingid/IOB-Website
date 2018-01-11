@@ -10,7 +10,7 @@
 	</main>
 
 	<?php
-		$args = array( 'post_type' => 'company', 'orderby' => 'title', 'order' => 'ASC' );
+		$args = array( 'post_type' => 'company','posts_per_page' => -1, 'orderby' => 'title', 'order' => 'ASC' );
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) {
 	?>
