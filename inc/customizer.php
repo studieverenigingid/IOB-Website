@@ -47,6 +47,10 @@
       .section--hero__container > * {background:<?= get_theme_mod('accent_color'); ?>;}
       .unsubscribe{background:<?= get_theme_mod('accent_color'); ?>;}
       .section__subtitle {color: <?= get_theme_mod('accent_color'); ?>;}
+      .pagination .page-numbers {border: 1px solid <?= get_theme_mod('accent_color'); ?>; color: <?= get_theme_mod('accent_color'); ?>;}
+      .pagination .page-numbers.current {color: white; background: <?= get_theme_mod('accent_color'); ?>;}
+      .pagination .page-numbers:hover {color: white; background: <?= get_theme_mod('accent_color'); ?>;}
+      .pagination .page-numbers:focus {color: white; background: <?= get_theme_mod('accent_color'); ?>;}
 
       /* secondary colors */
       .section__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }

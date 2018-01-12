@@ -1,0 +1,35 @@
+/*-------------------------------------*\
+	IOB-WEBSITE WORDPRESS THEME: Pagination
+	See style.css for the WP info.
+	- Nils Westhoff
+
+	pagination.scss:
+	+ pagination styles
+\*-------------------------------------*/
+
+
+
+
+
+
+/*-------------------------------------*\
+	Pagination container
+\*-------------------------------------*/
+.pagination {
+	text-align: center;
+	padding: 0 0 2rem;
+}
+
+.page-numbers { // Wordpress doesn’t allow custom classes :DDDD
+	padding: .2em .5em;
+	display: inline-block;
+	border: 1px solid $accent;
+	color: $accent;
+	text-decoration: none;
+	border-radius: 2rem;
+
+	&.current, &:hover, &:focus {
+		background: $accent;
+		color: white;
+	}
+}

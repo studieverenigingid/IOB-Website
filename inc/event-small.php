@@ -1,4 +1,7 @@
-<div class="event--small">
+<div class="event--small"
+	<?php if (isset($order_override))
+	 	echo $order_override; ?>>
+		
 	<a href="<?= the_permalink();?>">
 		<?= the_post_thumbnail('medium'); ?>
 	</a>
