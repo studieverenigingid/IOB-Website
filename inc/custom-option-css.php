@@ -6,7 +6,8 @@
 					background: <?= the_sub_field('social_color'); ?>;
 				}
 
-				.button.button--<?= the_sub_field('social_name'); ?>:hover {
+				.button.button--<?= the_sub_field('social_name'); ?>:hover,
+				.button.button--<?= the_sub_field('social_name'); ?>:focus {
 					background: <?= color_luminance(get_sub_field('social_color'), -.15); ?>;
 				}
 <?php endwhile;
