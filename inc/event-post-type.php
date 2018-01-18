@@ -33,8 +33,8 @@ function create_event_post_type() {
 		'capability_type' => 'post',
 		'hierarchical' => false,
 		'rewrite' => array(
-			'rewrite' => 'rewrite',
-			'with_front' => false
+			'slug' => 'event',
+			'with_front' => false,
 		 ),
 		'supports' => array( 'editor', 'revisions', 'thumbnail', 'title' ),
 
