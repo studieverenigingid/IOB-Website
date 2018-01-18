@@ -7,9 +7,6 @@
 ?>
 
 <main class="unsubscribe">
-	<h1 class="unsubscribe__title">
-		Unsubscribed from
-	</h1>
 	<?php
 		$action = $_GET['action'];
 		$post_ID = $_GET['post_ID'];
@@ -26,9 +23,6 @@
 					$delete_post->the_post();
 					?>
 						<div>
-							<h2 class="unsubscribe__sub-title">
-								<?=get_the_title();?>
-							</h2>
 							<?php
 
 							$results = array();
@@ -41,22 +35,37 @@
 
 							if($unique_ID_found !== false){
 								$row = $unique_ID_found+1;?>
-								<p>Should <?=$action?> row <?=$row?> from <?=get_the_title()?>.</p>
+								<h1 class="unsubscribe__title">Your subscription was removed from <?=get_the_title()?>.</h1>
+								<h2 class="unsubscribe__sub-title">
+									If you did this in error, sign up again <a href="<?=the_permalink();?>" class="unsubscribe__url">here</a>, or send us an <a class="unsubscribe__url" href='mailto:iob-svid@tudelft.nl'>e-mail</a>.
+								</h2>
 								<?php delete_row( 'participant_list', $row, $post_ID );
 							} else { ?>
-								<p>Your unique ID is invalid, if you're not sure whether your request was received, send us an <a class="unsubscribe__url" href='mailto:iob-svid@tudelft.nl'>e-mail</a>.</p>
+								<h1 class="unsubscribe__title">
+									Could not unsubscribe from <?=get_the_title()?>.
+								</h1>
+								<h2 class="unsubscribe__sub-title">
+									Your unique ID is invalid, if you're not sure whether your request was received,
+									send us an <a class="unsubscribe__url" href='mailto:iob-svid@tudelft.nl'>e-mail</a>.
+								</h2>
 							<?php }; ?>
 						</div>
 					<?php
 				}
 				wp_reset_postdata();
-			} else {
-				echo "Post ID ".$post_ID." is not an event.";
-			}
-		} else {
-			echo "No valid action was set, you should go back <a href=".home_url().">home</a>";
+			} else {?>
+				<h1 class="unsubscribe__title">
+					Could not remove signup.
+				</h1>
+				<h2 class="unsubscribe__sub-title">The value for post_ID is not an event, you should go back <a href="<?=home_url()?>" class="unsubscribe__url">home</a>.</h2>
+			<?php }
+		} else { ?>
+			<h1 class="unsubscribe__title">
+				Could not remove signup.
+			</h1>
+			<h2 class="unsubscribe__sub-title">The link is invalid, you should go back <a href="<?=home_url()?>" class="unsubscribe__url">home</a>.</h2>
+		<?php
 		}
-
 	?>
 </main>
 

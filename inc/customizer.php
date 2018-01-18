@@ -63,7 +63,8 @@
       .event--single__categories a:hover{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
       .fair__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .section--hero__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
-
+      .unsubscribe__url:hover, .unsubscribe__url:focus {color: <?= get_theme_mod('accent--secondary_color'); ?>;}
+      
       .button:hover, .button:focus{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 
       /* Reset Overruled Styles */

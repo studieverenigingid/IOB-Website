@@ -243,15 +243,18 @@
 
 	&__url {
 		color: white;
-		text-decoration: none;
 
 		&:hover, &:focus {
-			color: white;
+			color: $accent;
 			text-decoration: underline;
 		}
 	}
 
 	&__title, &__sub-title {
 		color: white;
+	}
+
+	&__sub-title {
+		font-size: 1.4em;
 	}
 }
