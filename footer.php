@@ -12,14 +12,17 @@
 			</picture>
 		</a>
 		<p class="pri-footer__paragraph">
-			<strong class="pri-footer__name"><?php echo esc_attr_x('Study association i.d', 'Company Name', 'svid-theme-domain');?></strong><br>
+			<strong class="pri-footer__name">Study association i.d</strong><br>
 			Landbergstraat 15<br>
 			2628 CE Delft<br>
-			<?php echo esc_attr_x('Netherlands', 'Netherlands in footer', 'svid-theme-domain');?><br>
+			Netherlands<br>
 			<a class="pri-footer__link"
 			href="tel:0031152783012">+31 (0) 15 278 3012</a><br>
 			<a class="pri-footer__link"
 			href="mailto:svid@tudelft.nl">svid@tudelft.nl</a><br>
+		</p>
+		<p class="pri-footer__paragraph pri-footer__paragraph--small">
+			Built by <a class="pri-footer__link" href="http://nilswesthoff.com" target="_blank">Nils Westhoff</a>
 		</p>
 	</div>
 
