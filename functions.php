@@ -69,6 +69,13 @@
 		wp_die();
 	}
 
+	function get_the_formatted_content ($more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
+		$content = get_the_content($more_link_text, $stripteaser, $more_file);
+		$content = apply_filters('the_content', $content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		return $content;
+	}
+
 	/* Create a variable for the image folder, so you don’t have to PHP it every time, which would make your code significantly more ugly. */
 	$img_folder = get_bloginfo('template_directory') . '/static/img/';
 

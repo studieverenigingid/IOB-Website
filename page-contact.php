@@ -13,7 +13,7 @@
 
 		<div class="section">
 			<div class="section__wrapper">
-				<p class="fair__descr"><?php echo get_the_content(); ?></p>
+				<p class="fair__descr"><?php echo get_the_formatted_content(); ?></p>
 				<?php include 'inc/social-buttons.php';?>
 			</div>
 		</div>
@@ -29,7 +29,15 @@
 		</div>
 		<div class="section">
 			<div class="section__wrapper">
-					<img src="<?= get_field('committee_image')?>">
+					<?php
+						$image = get_field('committee_image');
+						$size = 'large';
+
+						if( $image ) {
+							echo wp_get_attachment_image( $image, $size );
+						}
+
+					?>
 					<?= get_field('committee_info'); ?>
 			</div>
 		</div>
