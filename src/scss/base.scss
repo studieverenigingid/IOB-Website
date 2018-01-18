@@ -763,6 +763,36 @@ blockquote {
 
 
 /*-------------------------------------*\
+	404 styles
+\*-------------------------------------*/
+
+.page-404 {
+	background: $accent;
+	padding: 10% 15%;
+
+	&__url {
+		color: white;
+
+		&:hover, &:focus {
+			color: $accent;
+			text-decoration: underline;
+		}
+	}
+
+	&__title, &__sub-title {
+		color: white;
+	}
+
+	&__sub-title {
+		font-size: 1.4em;
+	}
+}
+
+
+
+
+
+/*-------------------------------------*\
 	Imports
 \*-------------------------------------*/
 

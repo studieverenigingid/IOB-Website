@@ -46,6 +46,7 @@
       .event--archive__top{background:<?= get_theme_mod('accent_color'); ?>;}
       .section--hero__container > * {background:<?= get_theme_mod('accent_color'); ?>;}
       .unsubscribe{background:<?= get_theme_mod('accent_color'); ?>;}
+      .page-404{background:<?= get_theme_mod('accent_color'); ?>;}
       .section__subtitle {color: <?= get_theme_mod('accent_color'); ?>;}
       .pagination .page-numbers {border: 1px solid <?= get_theme_mod('accent_color'); ?>; color: <?= get_theme_mod('accent_color'); ?>;}
       .pagination .page-numbers.current {color: white; background: <?= get_theme_mod('accent_color'); ?>;}
@@ -64,7 +65,8 @@
       .fair__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .section--hero__title:after {background: repeating-linear-gradient(-45deg, transparent 0px, transparent 10px, <?= get_theme_mod('accent--secondary_color'); ?> 10px, <?= get_theme_mod('accent--secondary_color'); ?> 20px); }
       .unsubscribe__url:hover, .unsubscribe__url:focus {color: <?= get_theme_mod('accent--secondary_color'); ?>;}
-      
+      .page-404__url:hover, .page-404__url:focus {color: <?= get_theme_mod('accent--secondary_color'); ?>;}
+
       .button:hover, .button:focus{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 
       /* Reset Overruled Styles */
