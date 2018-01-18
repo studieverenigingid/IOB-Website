@@ -142,7 +142,7 @@ if (!empty($errors)) {
 	$msg = wordwrap($msg,70);
 
 	// send email
-	mail($email,$subject,$msg,$headers);
+	wp_mail($email,$subject,$msg,$headers);
 
 	// Check if the update was successful
 	if ($update === false) {
