@@ -101,7 +101,7 @@ if( have_rows('participant_list', $post_ID) ):
 endif;
 
 if (in_array($email, $participant_emails)){
-	$errors[] = 'You have already signed up for this event, check your e-mail! If this is not the case, send us an <a href="mailto:iob-svid@tudelft.nl">e-mail</a>, we\'ll get you sorted.';
+	$errors[] = 'You have already signed up for this event, check your e-mail! If this is not the case, send us an <a href="mailto:events@iobdelft.com">e-mail</a>, we\'ll get you sorted.';
 }
 
 $new_signup_row = array(
@@ -134,7 +134,7 @@ if (!empty($errors)) {
 	$headers  = 'MIME-Version: 1.0' . "\r\n";
 	$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 	// Additional headers
-	$headers .= 'From: IDE Business Fair <iob-svid@tudelft.nl>' . "\r\n";
+	$headers .= 'From: IDE Business Fair <events@iobdelft.com>' . "\r\n";
 	// subject
 	$subject = "Signed up for: ".$event_title;
 

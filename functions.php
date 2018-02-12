@@ -30,6 +30,7 @@
 	add_action( 'wp_ajax_nopriv_event_signup', 'event_signup');
 	add_action( 'wp_ajax_event_signup', 'event_signup');
 	add_action( 'wp_ajax_show_participants', 'show_participants');
+	add_action( 'phpmailer_init', 'php_send_from_match' );
 
 	function custom_theme_setup() {
 		add_theme_support( 'post-thumbnails' ); // Allow posts to have thumbnails
@@ -74,6 +75,10 @@
 		$content = apply_filters('the_content', $content);
 		$content = str_replace(']]>', ']]&gt;', $content);
 		return $content;
+	}
+
+	function php_send_from_match( $phpmailer ) {
+	    $phpmailer->Sender = $phpmailer->From;
 	}
 
 	/* Create a variable for the image folder, so you don’t have to PHP it every time, which would make your code significantly more ugly. */
