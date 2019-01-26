@@ -4,11 +4,11 @@
 	<div class="pri-footer__association pri-footer__col">
 		<a href="https://studieverenigingid.nl/" target="_blank">
 			<picture>
-				<source srcset="<?=$img_folder?>logo.svg" type="image/svg+xml">
-					<img class="pri-footer__logo" alt="Study association i.d"
-					srcset="<?=$img_folder?>logo.png 1x,
-					<?=$img_folder?>logo@2x.png 2x"
-					src="<?=$img_folder?>logo.png">
+				<source srcset="<?=$img_folder?>logo-payoff.svg" type="image/svg+xml">
+					<img class="pri-footer__logo" alt="ID"
+					srcset="<?=$img_folder?>logo-payoff.png 1x,
+					<?=$img_folder?>logo-payoff@2x.png 2x"
+					src="<?=$img_folder?>logo-payoff.png">
 			</picture>
 		</a>
 		<p class="pri-footer__paragraph">
