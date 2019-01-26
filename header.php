@@ -73,11 +73,11 @@ global $img_folder;
 
 		<a href="<?php echo get_site_url(); ?>">
 			<picture>
-				<source srcset="<?=$img_folder?>logo-mark.svg" type="image/svg+xml">
+				<source srcset="<?=$img_folder?>logo-mark.svg?<?=$theme_info->version?>" type="image/svg+xml">
 				<img class="bies__image" alt="ID"
-					srcset="<?=$img_folder?>logo-mark.png 1x,
-						<?=$img_folder?>logo-mark@2x.png 2x"
-					src="<?=$img_folder?>logo-mark.png">
+					srcset="<?=$img_folder?>logo-mark.png?<?=$theme_info->version?> 1x,
+						<?=$img_folder?>logo-mark@2x.png?<?=$theme_info->version?> 2x"
+					src="<?=$img_folder?>logo-mark.png?<?=$theme_info->version?>">
 			</picture>
 		</a>
 
