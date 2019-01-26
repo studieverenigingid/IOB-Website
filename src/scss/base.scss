@@ -673,10 +673,7 @@ blockquote {
 
 	&__logo {
 		max-width: 16rem;
-
-		@media (min-width: $brk--phone) {
-			margin: .3rem 0;
-		}
+		margin: 2rem 0 .8rem;
 	}
 
 	&__name {
