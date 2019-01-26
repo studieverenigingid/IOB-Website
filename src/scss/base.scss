@@ -86,13 +86,7 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 		height: 25px;
 		bottom: 2%;
 		margin-top: -1px;
-		background: repeating-linear-gradient(
-			-45deg,
-			transparent 0px,
-			transparent 10px,
-			#D8386C 10px,
-			#D8386C 20px
-		)
+		background: #D8386C;
 	}
 }
 
