@@ -66,6 +66,9 @@
       .section--hero__title:after {background: <?= get_theme_mod('accent--secondary_color'); ?>; }
       .unsubscribe__url:hover, .unsubscribe__url:focus {color: <?= get_theme_mod('accent--secondary_color'); ?>;}
       .page-404__url:hover, .page-404__url:focus {color: <?= get_theme_mod('accent--secondary_color'); ?>;}
+      .menu-toggle {color:<?= get_theme_mod('accent--secondary_color'); ?>;}
+      .menu-toggle::before, .menu-toggle::after {box-shadow: 0 11px 0 0 <?= get_theme_mod('accent--secondary_color'); ?>; background: <?= get_theme_mod('accent--secondary_color'); ?>;}
+}
 
       .button:hover, .button:focus{background:<?= color_luminance(get_theme_mod('accent--secondary_color'), -.15); ?>}
 
