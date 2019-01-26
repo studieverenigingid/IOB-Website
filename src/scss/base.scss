@@ -24,22 +24,6 @@
 	Dependencies
 \*-------------------------------------*/
 
-@font-face {
-	font-family: FuturaStd;
-	src: 	url(../fonts/FuturaStd-Heavy.otf) format('opentype'),
-				url(../fonts/FuturaStd-Heavy.ttf) format('opentype'),
-				url(../fonts/FuturaStd-Heavy.woff) format('woff');
-	font-weight: 700;
-}
-
-@font-face {
-	font-family: FuturaBT;
-	src:	url(../fonts/FuturaBT-Light.otf) format('opentype'),
-				url(../fonts/FuturaBT-Light.ttf) format('opentype'),
-				url(../fonts/FuturaBT-Light.woff) format('woff');
-	font-weight: 300;
-}
-
 // Grids (default breakpoints, wrappers, containers, etc.)
 @import "grid";
 
@@ -52,8 +36,8 @@
 \*-------------------------------------*/
 
 // Fonts
-$font--heavy: 'FuturaStd', sans-serif;
-$font--light: 'FuturaBT', sans-serif;
+$font--heavy: 'Muli', sans-serif;
+$font--light: 'Muli', sans-serif;
 
 // Colors
 $accent: #31307D;
@@ -434,6 +418,7 @@ blockquote {
 
 	.current-menu-item {
 		font-family: $font--heavy;
+		font-weight: 700;
 	}
 
 	.menu-item {
@@ -589,7 +574,6 @@ blockquote {
 
 		&__kickstart {
 			font-size: 5em;
-			letter-spacing: 5px;
 			line-height: 1.2em;
 			text-transform: uppercase;
 			background: none !important;
@@ -708,6 +692,7 @@ blockquote {
 
 	&__name {
 		font-family: $font--heavy;
+		font-weight: 700;
 	}
 
 	&__link {
