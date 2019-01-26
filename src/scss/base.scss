@@ -24,22 +24,6 @@
 	Dependencies
 \*-------------------------------------*/
 
-@font-face {
-	font-family: FuturaStd;
-	src: 	url(../fonts/FuturaStd-Heavy.otf) format('opentype'),
-				url(../fonts/FuturaStd-Heavy.ttf) format('opentype'),
-				url(../fonts/FuturaStd-Heavy.woff) format('woff');
-	font-weight: 700;
-}
-
-@font-face {
-	font-family: FuturaBT;
-	src:	url(../fonts/FuturaBT-Light.otf) format('opentype'),
-				url(../fonts/FuturaBT-Light.ttf) format('opentype'),
-				url(../fonts/FuturaBT-Light.woff) format('woff');
-	font-weight: 300;
-}
-
 // Grids (default breakpoints, wrappers, containers, etc.)
 @import "grid";
 
@@ -52,8 +36,8 @@
 \*-------------------------------------*/
 
 // Fonts
-$font--heavy: 'FuturaStd', sans-serif;
-$font--light: 'FuturaBT', sans-serif;
+$font--heavy: 'Muli', sans-serif;
+$font--light: 'Muli', sans-serif;
 
 // Colors
 $accent: #31307D;
@@ -102,13 +86,7 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 		height: 25px;
 		bottom: 2%;
 		margin-top: -1px;
-		background: repeating-linear-gradient(
-			-45deg,
-			transparent 0px,
-			transparent 10px,
-			#D8386C 10px,
-			#D8386C 20px
-		)
+		background: #D8386C;
 	}
 }
 
@@ -201,7 +179,7 @@ h3 {
 }
 
 p {
-	line-height: 1.4;
+	line-height: 1.6;
 }
 
 blockquote {
@@ -308,27 +286,22 @@ blockquote {
 .bies {
 	width: 100%;
 	background: $accent;
-	overflow: hidden;
 	position: relative;
+	padding-bottom: 1em;
 
 	&__image {
-		min-height: 60px;
-		height: 60px;
+		height: 80px;
 		position: relative;
 		z-index: 11;
 		display: block;
+		margin: 0 auto;
 
-		@media (min-width: $brk--phone) {
-			background: transparentize($background--gray, 0.5);
-
-			&--sticky {
-				margin-bottom: 45px;
-			}
+		@media (min-width: $brk--tablet) {
+			margin: 0 0 0 2em;
 		}
 
-		@media (min-width: 1218px) {
-			width: 100%;
-			height: auto;
+		@media (min-width: $brk--desktop) {
+			height: 7.5vw;
 		}
 	}
 }
@@ -350,21 +323,20 @@ blockquote {
 .menu-toggle {
 	position: fixed;
 	right: 0;
-	bottom: 0;
+	top: 0;
 	height: 3.1rem;
-	width: 100%;
-	padding-left: 1rem;
+	width: 6.4rem;
+	padding-left: 2rem;
+	padding-right: 1rem;
 	line-height: 3.1rem;
 	text-align: left;
-	color: white;
-	font-size: .9rem;
+	color: $accent--secondary;
 	z-index: 11;
 	cursor: pointer;
 	transition: width 200ms ease-out;
 	overflow: hidden;
-	background: transparentize($background--gray, 0.5);
 
-	@media (min-width: $brk--phone) {
+	@media (min-width: $brk--tablet) {
 		display: none;
 	}
 
@@ -372,30 +344,32 @@ blockquote {
 	&:after {
 		display: block;
 		content: "";
-		width: 1.2rem;
-		height: 4px;
-		box-shadow: 0 9px 0 0 white;
-		background: white;
+		width: 1.6rem;
+		height: 5px;
+		box-shadow: 0 11px 0 0 $accent--secondary;
+		background: $accent--secondary;
 		position: absolute;
 		right: -.9rem;
-		top: 14px;
+		top: 12px;
 		transition: right 200ms ease-out,
 			color 200ms ease-out;
 	}
 
 	&:after {
 		top: 23px;
-		right: -.2rem;
-		width: .8rem;
+		right: -.1rem;
+		width: 1.2rem;
 	}
 
 	&.opened {
+		width: 8.2rem;
+
 		&:before {
-			right: .9rem;
+			right: 1rem;
 		}
 
 		&:after {
-			right: .5rem;
+			right: .6rem;
 		}
 	}
 }
@@ -417,8 +391,9 @@ blockquote {
 	width: 100%;
 	font-family: $font--light;
 	position: fixed;
-	right: 0;
+	left: 0;
 	top: 0;
+	bottom: 0;
 	background: $background--gray;
 	color: white;
 	transform: translateX(100%);
@@ -426,7 +401,7 @@ blockquote {
 	z-index: 10;
 	padding-top: 3rem;
 	max-height: 100vh;
-	padding-bottom: 3.1rem;
+	padding-bottom: 1rem;
 	overflow-y: auto;
 	display: flex;
 	flex-flow: row wrap;
@@ -449,21 +424,30 @@ blockquote {
 	&__list,
 	&__language-switch {
 		margin: 0;
-		padding: 1rem 0;
+		padding: 3rem 0 0;
 		list-style: none;
 	}
 
-	@media (max-width: $brk--phone + 1) {
+	@media (max-width: $brk--tablet + 1) {
 		&__list {
 			flex-basis: 100%;
 			height: 100%;
 		}
 
 		&__language-switch {
-			display: flex;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			padding: 0 1em 0 0;
+			font-size: .9rem;
 
 			&__context {
 				padding: .8rem 0 .8rem 1.4rem;
+			}
+
+			&__link {
+				font-weight: 900;
 			}
 		}
 
@@ -472,19 +456,35 @@ blockquote {
 		}
 	}
 
-	@media (min-width: $brk--phone) {
+	@media (min-width: $brk--tablet) {
+		font-size: .9em;
+		bottom: auto;
 		padding: 0;
-		position: static;
+		position: absolute;
 		transform: translateX(0px);
-		background: transparentize($background--gray, 0.5);
+		background: none;
+		transition: padding 200ms ease-out,
+			background 200ms ease-out;
+		padding-left: 140px;
+		padding-right: 2.5em;
+		overflow-y: visible;
 
 		&__list, &__language-switch {
 			padding: 0.4rem 0.6rem 0.4rem 0.6rem;
 		}
 
 		&__language-switch {
+			font-size: 1em;
+			position: absolute;
+			right: 0;
+
 			&__context {
 				display: none;
+				padding: 0;
+			}
+
+			&:hover {
+				background: $background--gray;
 			}
 
 			&:hover &__context {
@@ -497,7 +497,7 @@ blockquote {
 			font-size: .9em;
 
 			a {
-				padding: .4rem .8rem;
+				padding: .3em .6em;
 			}
 
 			&--language-switch {
@@ -510,8 +510,68 @@ blockquote {
 
 		&--sticky {
 			position: fixed;
+			background: transparentize($background--gray, 0.4);
+			padding-left: 0;
 		}
 	}
+
+	@media (min-width: $brk--desktop) {
+		padding-left: 12vw;
+
+		.menu-item {
+			a {
+				padding: .5em .8em;
+			}
+		}
+
+		&--sticky {
+			padding-left: 0;
+		}
+	}
+
+	@media (min-width: $brk--large-desktop) {
+		padding-left: 11vw;
+		font-size: 1em;
+
+		&--sticky {
+			padding-left: 0;
+		}
+	}
+}
+
+.sub-menu {
+	list-style: none;
+	padding: 0;
+	border-left: 1px solid white;
+	margin-left: 1.4rem;
+	font-size: .9em;
+
+	@media (min-width: $brk--tablet) {
+		position: absolute;
+		top: 2.3em;
+		margin-left: 0;
+		border: none;
+		background: $background--gray;
+		font-size: 1em;
+		opacity: 0;
+		transform: translateY(-30%);
+		transition: all ease-out 200ms;
+		pointer-events: none;
+
+		.menu-item a {
+			padding: 1em;
+		}
+	}
+
+	@media (min-width: $brk--desktop) {
+		top: 2.6em;
+	}
+}
+
+.menu-item:hover .sub-menu {
+	opacity: 1;
+	transform: translateY(0);
+	pointer-events: inherit;
 }
 
 
@@ -535,7 +595,6 @@ blockquote {
 			position: absolute;
 			height: 100%;
 			width: 100%;
-			filter: grayscale(70%);
 			z-index: -1;
 			background-size: cover;
 			top: 0;
@@ -567,7 +626,7 @@ blockquote {
 
 		&__logo {
 			width: 85%;
-			max-width: 300px;
+			max-width: 225px;
 			height: auto;
 		}
 
@@ -589,7 +648,6 @@ blockquote {
 
 		&__kickstart {
 			font-size: 5em;
-			letter-spacing: 5px;
 			line-height: 1.2em;
 			text-transform: uppercase;
 			background: none !important;
@@ -661,7 +719,7 @@ blockquote {
 		&--fair {
 			p {
 				margin: 0 $pad 2*$pad;
-				font-size: 1.3em;
+				font-size: 1.2em;
 			}
 		}
 	}
@@ -700,14 +758,12 @@ blockquote {
 
 	&__logo {
 		max-width: 16rem;
-
-		@media (min-width: $brk--phone) {
-			margin: .3rem 0;
-		}
+		margin: 2rem 0 .8rem;
 	}
 
 	&__name {
 		font-family: $font--heavy;
+		font-weight: 700;
 	}
 
 	&__link {

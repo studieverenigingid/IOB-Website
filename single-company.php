@@ -17,7 +17,7 @@
 			<?php endif; ?>
 
 			<div class="company--single__meta">
-				<h1 class="company--single__title"><?= the_title(); ?></h1> is a <?php the_field('company_type'); ?>
+				<h1 class="company--single__title"><?= the_title(); ?></h1> <?php the_field('company_type'); ?>
 			</div>
 
 			<?php
