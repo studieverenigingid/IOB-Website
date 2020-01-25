@@ -626,8 +626,10 @@ blockquote {
 
 		&__logo {
 			width: 85%;
-			max-width: 225px;
+			max-width: 250px;
 			height: auto;
+			background: none;
+			padding: 1rem 0;
 		}
 
 		&__title {
