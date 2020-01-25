@@ -290,14 +290,8 @@ blockquote {
 	padding-bottom: 1em;
 
 	&--front-page {
-<<<<<<< HEAD
-		background: none;
-		position: absolute;
-
-=======
 		background: none !important;
 		position: absolute;
->>>>>>> hotfix/give_no_bg_importance
 	}
 
 	&__image {
@@ -639,11 +633,7 @@ blockquote {
 			width: 85%;
 			max-width: 250px;
 			height: auto;
-<<<<<<< HEAD
-			background: none;
-=======
 			background: none !important;
->>>>>>> hotfix/give_no_bg_importance
 			padding: 1rem 0;
 		}
 
