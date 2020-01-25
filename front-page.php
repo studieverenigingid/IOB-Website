@@ -4,7 +4,7 @@
 ?>
 
 	<div class="section section--hero">
-		<div class="section--hero__background" style="background:linear-gradient(rgba(255, 255, 255, .2) 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>');"></div>
+		<div class="section--hero__background" style="background:linear-gradient(rgba(255, 255, 255, .2) 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>'); background-size:cover; background-position: center;"></div>
 		<div class="section--hero__container">
 			<?php
 				$image = get_field('front_page_logo');
