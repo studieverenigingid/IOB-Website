@@ -290,9 +290,8 @@ blockquote {
 	padding-bottom: 1em;
 
 	&--front-page {
-		background: none;
+		background: none !important;
 		position: absolute;
-
 	}
 
 	&__image {
@@ -634,7 +633,7 @@ blockquote {
 			width: 85%;
 			max-width: 250px;
 			height: auto;
-			background: none;
+			background: none !important;
 			padding: 1rem 0;
 		}
 
