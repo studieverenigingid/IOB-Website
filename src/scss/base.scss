@@ -289,6 +289,12 @@ blockquote {
 	position: relative;
 	padding-bottom: 1em;
 
+	&--front-page {
+		background: none;
+		position: absolute;
+
+	}
+
 	&__image {
 		height: 80px;
 		position: relative;
@@ -462,7 +468,7 @@ blockquote {
 		padding: 0;
 		position: absolute;
 		transform: translateX(0px);
-		background: none;
+		background: transparentize($background--gray, 0.4);
 		transition: padding 200ms ease-out,
 			background 200ms ease-out;
 		padding-left: 140px;
@@ -510,7 +516,6 @@ blockquote {
 
 		&--sticky {
 			position: fixed;
-			background: transparentize($background--gray, 0.4);
 			padding-left: 0;
 		}
 	}
@@ -604,6 +609,7 @@ blockquote {
 		}
 
 		&__container {
+			margin-top: 3.5em;
 			top: 0;
 			left: 0;
 			right: 0;
