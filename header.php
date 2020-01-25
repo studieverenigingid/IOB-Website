@@ -69,7 +69,7 @@ global $img_folder;
 
 	<body<?php if(is_home()) { echo ' class="home"'; } ?>>
 
-	<header class="bies">
+	<header class="bies <?php echo (is_front_page()) ? 'bies--front-page' : ''; ?>">
 
 		<a href="<?php echo get_site_url(); ?>">
 			<picture>
