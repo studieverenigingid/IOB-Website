@@ -6,10 +6,13 @@
 	<div class="section section--hero">
 		<div class="section--hero__background" style="background:linear-gradient(rgba(255, 255, 255, .2) 50%, #fafafa), url('<?php the_post_thumbnail_url('front-page-hero', array( 'class' => 'thumbnail--front-page' )); ?>');"></div>
 		<div class="section--hero__container">
-			<img class="section--hero__logo" alt="Study association i.d"
-				srcset="<?=$img_folder?>iob-logo.png 1x,
-					<?=$img_folder?>iob-logo@2x.png 2x"
-				src="<?=$img_folder?>iob-logo.png">
+			<?php
+				$image = get_field('front_page_logo');
+				if( !empty( $image ) ): ?>
+    	<img src="<?php echo esc_url($image['url']); ?>"
+				alt="Logo Industrial Design Engineering Business Fair"
+				class="section--hero__logo">
+			<?php endif; ?>
 			<h1 class="section--hero__title"><span><?=bloginfo('title');?></span></h1>
 			<h3 class="section--hero__date">
 				<?php
