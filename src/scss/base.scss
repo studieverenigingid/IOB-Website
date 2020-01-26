@@ -615,6 +615,12 @@ blockquote {
 			bottom: 0;
 			padding: 2rem;
 
+			&--kick {
+				@media (max-width: $brk--desktop) {
+					display: none;
+				}
+			}
+
 			& > * {
 				max-width: 500px;
 				color: white;

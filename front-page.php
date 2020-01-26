@@ -34,7 +34,7 @@
 				<?php }
 			?>
 		</div>
-		<div class="section--hero__container">
+		<div class="section--hero__container section--hero__container--kick">
 			<h2 class="section--hero__kickstart"><?=bloginfo('description');?></h2>
 		</div>
 	</div>
