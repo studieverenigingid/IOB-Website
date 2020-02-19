@@ -52,7 +52,7 @@
       <input type="hidden" name="category" value="<?=$category?>">
       <input type="hidden" name="action" value="event_signup">
 
-      <button type="submit" class="button" name="action" value="Submit">
+      <button type="submit" class="button" name="action" value="event_signup">
         Submit
         <span class="button--loading">&#xf1ce;</span>
         <span class="button--success">&#xf00c;</span>
