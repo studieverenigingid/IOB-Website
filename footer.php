@@ -12,7 +12,7 @@
 			</picture>
 		</a>
 		<p class="pri-footer__paragraph">
-			<strong class="pri-footer__name">Study association i.d</strong><br>
+			<strong class="pri-footer__name">ID study association</strong><br>
 			Landbergstraat 15<br>
 			2628 CE Delft<br>
 			Netherlands<br>
