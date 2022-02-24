@@ -17,13 +17,12 @@
 			<h3 class="section--hero__date">
 				<?php
 					$fair_start_month = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'F');
-					$fair_start_day = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'dS');
+					$fair_start_day = date_format(date_create_from_format('d/m/Y', get_field('fair_start_date', 'option')), 'jS');
 					$fair_end_month = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'F');
-					$fair_end_day = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'dS');
+					$fair_end_day = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'jS');
 				 ?>
 
 				<?= $fair_start_month ?> <?= $fair_start_day ?> to <?php if($fair_start_month != $fair_end_month){ echo $fair_end_month; }; ?> <?= $fair_end_day ?> <br>
-				Faculty Hall IDE
 			</h3>
 			<?php
 				$query = new WP_Query(array(
