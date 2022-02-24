@@ -22,7 +22,7 @@
 					$fair_end_day = date_format(date_create_from_format('d/m/Y', get_field('fair_end_date', 'option')), 'jS');
 				 ?>
 
-				<?= $fair_start_month ?> <?= $fair_start_day ?> <?php if($fair_start_day === $fair_end_day - 1) { echo "&"; } else { echo "to"; }; ?> <?php if($fair_start_month != $fair_end_month){ echo $fair_end_month; }; ?> <?= $fair_end_day ?> <br>
+				<?= $fair_start_month ?> <?= $fair_start_day ?> <?php if($fair_start_day == $fair_end_day - 1) { echo "&"; } else { echo "to"; }; ?> <?php if($fair_start_month != $fair_end_month){ echo $fair_end_month; }; ?> <?= $fair_end_day ?> <br>
 			</h3>
 			<?php
 				$query = new WP_Query(array(
