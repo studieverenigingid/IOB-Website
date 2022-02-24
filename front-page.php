@@ -81,7 +81,7 @@
 	<!-- ********* -->
 
 	<?php
-		$args = array( 'post_type' => 'company', 'posts_per_page' => 8, 'orderby' => 'rand' );
+		$args = array( 'post_type' => 'company', 'posts_per_page' => 8, 'orderby' => 'publish_date', 'order' => 'DESC'  );
 		$loop = new WP_Query( $args );
 		if ( $loop->have_posts() ) {
 	?>
