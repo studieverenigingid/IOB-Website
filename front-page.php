@@ -30,7 +30,7 @@
 					'post_type' => 'event'
 				));
 				if( $query->have_posts() ){?>
-					<br /><a href="<?=get_post_type_archive_link('event')?>" class="button button--signup">Sign up! <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+					<br /><a href="<?=get_post_type_archive_link('event')?>" class="button button--signup">Activities <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
 				<?php }
 			?>
 		</div>
