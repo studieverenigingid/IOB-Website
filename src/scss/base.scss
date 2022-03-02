@@ -41,7 +41,7 @@ $font--light: 'Muli', sans-serif;
 
 // Colors
 $accent: #31307D;
-$accent--secondary: #D8386C;
+$accent--secondary: #841a26;
 $background--light: #fafafa;
 $background--gray: #222;
 
@@ -86,7 +86,7 @@ $transition--cubic: cubic-bezier(0.77, 0, 0.175, 1);
 		height: 25px;
 		bottom: 2%;
 		margin-top: -1px;
-		background: #D8386C;
+		background: $accent--secondary;
 	}
 }
 
