@@ -51,34 +51,6 @@
 			</div>
 	</main>
 
-	<div class="event--single__wrapper">
-		<?php
-			if(!empty(get_field('facebook_url'))){?>
-				<a class="button button--facebook" href="<?= get_field('facebook_url')?>" target="_blank"><i class="fa fa-facebook"></i> Event Page</a>
-			<?php }
-		 	the_content(); ?>
-
-		<h2>Sign-up</h2>
-		<?php
-			include 'inc/event-form.php';
-
-			if (current_user_can('editor') || current_user_can('administrator')) { ?>
-
-			<h3>Show Participant List (for admin)</h3>
-			<p>
-				This section is only visible to administrators and editors.<br>
-				Useful for sending mass e-mails.
-			</p>
-
-			<form action="#" class="show-participants">
-				<input type="hidden" name="post_ID" value="<?=get_the_ID()?>">
-				<input type="hidden" name="action" value="show_participants">
-				<input type="submit" name="action" class="button" value="Show Particpants" />
-			</form>
-
-			<?php } ?>
-	</div>
-
 <?php
 	endwhile; endif;
 	get_footer();
