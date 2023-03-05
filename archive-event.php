@@ -26,6 +26,7 @@ get_header();
 						?>
 						<div class="section__title__wrapper">
 							<h2 class="section__title"><span>Upcoming Events</span></h2>
+							<a href="https://eventix.shop/uaq89ewa" target="_blank">Sign up here!</a>
 						</div>
 						<div class="section__wrapper">
 							<?php
