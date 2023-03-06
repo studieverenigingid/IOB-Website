@@ -15,8 +15,8 @@ $brk--large-desktop: 1920px;
 
 		&__wrapper {
 			display: flex;
-			flex-flow: row wrap;
-			justify-content: center;
+			flex-flow: column wrap;
+			align-items: center;
 		}
 	}
 
